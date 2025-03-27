@@ -7,7 +7,7 @@ export const HomeNavBar = () => {
       className="flex items-start justify-center min-h-screen gap-16 "
     >
       {/* Contenedor del texto */}
-      <div className="text-left ">
+      <div className="text-left pl-56 ">
         {" "}
         {/* Asegura alineación izquierda */}
         <h1 className="text-6xl font-bold">
