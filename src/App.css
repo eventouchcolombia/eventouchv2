@@ -4,9 +4,11 @@
 
 * {
   margin: 0;
-  padding: 0;
+ 
   box-sizing: border-box;
 }
+
+
 
 html {
   font-size: 62.5%;
@@ -86,7 +88,6 @@ section {
   padding: 12rem 0;
   text-align: center;
   font-size: 5rem;
-  text-transform: uppercase;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -126,7 +127,7 @@ body.dark-mode #Contactanos {
   flex-direction: column;
   position: fixed;
   left: 10rem;
-  top: 50%;
+  top: 56%;
   transform: translateY(-50%);
 }
 .side-navbar ul {
