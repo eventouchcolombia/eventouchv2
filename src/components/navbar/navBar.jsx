@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { sectionIds } from "./sectionIds";
 import { Link } from "react-router-dom";
 import Logo from "../../utilities/images/Logo.png";
+import LogoDarkMode from "../../utilities/images/LogoDarkMode.png";
 import whatsapp from "../../utilities/images/whatsapp.png";
 import instagram from "../../utilities/images/instagram.png";
 import linkedin from "../../utilities/images/linkedin.png";
@@ -35,18 +36,20 @@ const NavBar = ({ activeLink, onScrollToSection }) => {
       <div className="container">
         <div className="row">
           <div className="logo">
-            <img src={Logo} alt="Logo" />
+          <img src={darkMode ? LogoDarkMode : Logo} alt="Logo" />
           </div>
+
+          {/* Botón Dark Mode */}
+          <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+            {darkMode ? "🌙" : "☀️"}
+          </button>
 
           {/* Botón de menú hamburguesa */}
           <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
             ☰
           </button>
 
-          {/* Botón Dark Mode */}
-          <button className="dark-mode-toggle" onClick={toggleDarkMode}>
-            {darkMode ? "🌙" : "☀️"}
-          </button>
+
 
           {/* Menú de navegación */}
           <ul className={`menu-bar ${menuOpen ? "show" : ""}`}>
