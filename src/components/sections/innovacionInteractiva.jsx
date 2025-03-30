@@ -20,7 +20,7 @@ export const InnovacionInteractiva = () => {
   return (
     <section id="Innovacion-Interactiva" className="w-screen h-screen">
       <div className="flex flex-col md:flex-row w-full h-screen p-6 lg:p-20">
-      <div className="w-full h-auto md:w-2/3 md:h-screen flex flex-col items-center justify-center px-6 pt-50 md:pt-0 md:pl-70 md:pr-20 text-left gap-6 md:gap-10  md:pb-20 ">
+        <div className="w-full h-auto md:w-2/3 md:h-screen flex flex-col items-center justify-center px-6 pt-50 md:pt-0 md:pl-70 md:pr-20 text-left gap-6 md:gap-10  md:pb-20 ">
 
           <h2 className="md:text-4xl text-5xl font-bold">
             Transformamos la forma en que las marcas se conectan con su audiencia
