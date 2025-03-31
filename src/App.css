@@ -150,6 +150,16 @@ body.dark-mode .side-navbar .active{
   border: none;
   color: black;
 }
+body.dark-mode #dataCard {
+  transition: background-color 0.3s ease-in-out;
+  color: black;
+  background-color: rgba(231, 170, 254, 1);
+}
+body.dark-mode #dataCardWhite {
+  transition: background-color 0.3s ease-in-out;
+  color: black;
+  background-color: white;
+}
 
 .side-navbar {
   display: flex;
