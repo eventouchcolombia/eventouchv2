@@ -7,6 +7,8 @@
   box-sizing: border-box;
 }
 
+
+
 html {
   font-size: 62.5%;
 }
@@ -52,6 +54,22 @@ nav {
   background-color: var(--whiteColor);
   box-shadow: var(--box-shadow);
   transition: padding 0.3s ease-in-out;
+}
+body.dark-mode nav {
+  background-color: var(--purple-color) !important;
+  transition: background-color 0.3s ease-in-out;
+  
+}
+@media (min-width: 768px) {
+body.dark-mode nav a{
+  color:white;
+  font-weight: 100 !important;
+}
+
+body.dark-mode nav .active{
+  color: rgba(231, 170, 254, 1);
+  font-weight: 800 !important;
+}
 }
 
 nav.scrolled {
@@ -115,8 +133,31 @@ body.dark-mode #Nuestros-Servicios,
 body.dark-mode #VR-Oculus,
 body.dark-mode [id="¿Por-Que-Elegirnos?"],
 body.dark-mode #Contactanos {
-  background-color: purple !important;
+  background-color: var(--purple-color) !important;
+  color: white ;
+  
   transition: background-color 0.3s ease-in-out;
+}
+body.dark-mode .side-navbar {
+  background-color: var(--purple-color) !important;
+  color: white ;
+  transition: background-color 0.3s ease-in-out;
+}
+body.dark-mode .side-navbar .active{
+  background-color: rgba(231, 170, 254, 1) !important;
+  transition: background-color 0.3s ease-in-out;
+  border: none;
+  color: black;
+}
+body.dark-mode #dataCard {
+  transition: background-color 0.3s ease-in-out;
+  color: black;
+  background-color: rgba(231, 170, 254, 1);
+}
+body.dark-mode #dataCardWhite {
+  transition: background-color 0.3s ease-in-out;
+  color: black;
+  background-color: white;
 }
 
 .side-navbar {
@@ -124,7 +165,7 @@ body.dark-mode #Contactanos {
   flex-direction: column;
   position: fixed;
   left: 10rem;
-  top: 50%;
+  top: 56%;
   transform: translateY(-50%);
 }
 .side-navbar ul {
@@ -287,4 +328,8 @@ body.dark-mode #Contactanos {
   .social-icons {
     display: none;
   }
+}
+
+.dark-mode-toggle {
+  font-size: 1.6rem;
 }
