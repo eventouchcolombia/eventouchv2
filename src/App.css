@@ -124,7 +124,11 @@ section {
   background-color: white !important;
   transition: background-color 0.3s ease-in-out;
 }
-
+/* #Contactanos {
+  background-color: rgba(231, 170, 254, 1) !important;
+  transition: background-color 0.3s ease-in-out;
+  
+} */
 
 /* Modo oscuro: cambia el fondo a morado */
 body.dark-mode #Home,
