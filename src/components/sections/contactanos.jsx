@@ -1,5 +1,8 @@
 import React from "react";
 // import { FaWhatsapp, FaInstagram, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import whatsapp from "../../utilities/images/whatsapp.png";
+import instagram from "../../utilities/images/instagram.png";
+import linkedin from "../../utilities/images/linkedin.png";
 
 export const Contactanos = () => {
   return (
@@ -16,7 +19,7 @@ export const Contactanos = () => {
             <input
                 type="text"
                 placeholder="Escribe aquí ..."
-                className="text-4xl p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="text-4xl placeholder:text-2xl p-2 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-300"
             />
             </div>
 
@@ -25,7 +28,7 @@ export const Contactanos = () => {
             <input
                 type="email"
                 placeholder="Escribe aquí ..."
-                className="text-4xl p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="text-4xl placeholder:text-2xl p-2 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-300"
             />
             </div>
 
@@ -34,7 +37,7 @@ export const Contactanos = () => {
             <input
                 type="text"
                 placeholder="Escribe aquí ..."
-                className="text-4xl p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="text-4xl placeholder:text-2xl p-2 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-300"
             />
             </div>
 
@@ -43,7 +46,7 @@ export const Contactanos = () => {
             <input
                 type="tel"
                 placeholder="Escribe aquí ..."
-                className="text-4xl p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="text-4xl placeholder:text-2xl p-2 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-300"
             />
             </div>
 
@@ -52,17 +55,20 @@ export const Contactanos = () => {
             <textarea
                 rows="4"
                 placeholder="Escribe aquí ..."
-                className="text-sm p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="text-sm placeholder:text-2xl p-2 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-300"
             ></textarea>
             </div>
 
-            <div className="md:col-span-2 flex justify-center h-15 pt-14 mt-4">
-            <button
-                type="submit"
-                className="bg-[#753E89] w-1/3  text-white text-base font-semibold px-8 py-2 rounded-full hover:bg-purple-800 transition"
-            >
-                Enviar
-            </button>
+            <div className="md:col-span-2 flex justify-center h-25 pt-12 mt-4">
+                
+                    <button
+                        type="submit"
+                        className="bg-[#753E89] w-1/3  text-white text-base font-semibold px-8 py-2 rounded-full hover:bg-purple-800 transition"
+                    >
+                        Enviar
+                    </button>
+                
+
             </div>
         </form>
         </div>
@@ -70,26 +76,26 @@ export const Contactanos = () => {
         {/* CONTACT INFO */}
         <div className="md:w-1/2 flex flex-col items-center justify-center px-6 md:px-12 gap-4">
           <div className="flex flex-wrap gap-3 mb-4">
-            <button className="p-2 bg-white rounded-full shadow-md hover:scale-105 transition">
-              {/* <FaWhatsapp className="text-green-500 text-xl" /> */}
+            <button className="p-2 bg-white rounded-3xl shadow-md hover:scale-105 transition">
+                            <img src={whatsapp} alt="whatsapp" />
+                            
+                            
             </button>
-            <button className="p-2 bg-white rounded-full shadow-md hover:scale-105 transition">
-              {/* <FaInstagram className="text-pink-500 text-xl" /> */}
+            <button className="p-2 bg-white rounded-3xl shadow-md hover:scale-105 transition">
+            <img src={instagram} alt="instagram" />
             </button>
-            <button className="p-2 bg-white rounded-full shadow-md hover:scale-105 transition">
-              {/* <FaLinkedin className="text-blue-600 text-xl" /> */}
+            <button className="p-2 bg-white rounded-3xl shadow-md hover:scale-105 transition">
+            <img src={linkedin} alt="linkedin" />
             </button>
-            <button className="p-2 bg-white rounded-full shadow-md hover:scale-105 transition">
-              {/* <FaEnvelope className="text-gray-600 text-xl" /> */}
-            </button>
-            <div className="p-2 px-4 bg-white rounded-md shadow-md text-sm flex items-center gap-2">
+
+            <div className="p-2 px-4 bg-white rounded-3xl shadow-md text-sm flex items-center gap-2">
               {/* <FaMapMarkerAlt className="text-purple-600" /> */}
               <span>Calle 123 #45-67, Bogotá, Colombia</span>
             </div>
           </div>
 
           {/* Placeholder: Image / Mapa / Contact Box */}
-          <div className="w-full h-60 md:h-80 bg-gray-300 rounded-md shadow-inner"></div>
+          <div className="w-full h-60 md:h-80 bg-gray-300 rounded-3xl shadow-inner"></div>
         </div>
       </div>
     </section>
