@@ -40,12 +40,20 @@ const NavBar = ({ activeLink, onScrollToSection }) => {
           </div>
 
           {/* Botón Dark Mode */}
-          <button className="dark-mode-toggle" onClick={toggleDarkMode}>
-            {darkMode ? "🌙" : "☀️"}
-          </button>
+          <div className="flex items-center">
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                className="sr-only peer"
+                checked={darkMode}
+                onChange={toggleDarkMode}
+              />
+              <div className="w-15 h-9 bg-gray-200 peer-focus:outline-none  dark:bg-gray-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-8 after:w-8 after:transition-all peer-checked:bg-gray-600"></div>
+            </label>
+          </div>
 
           {/* Botón de menú hamburguesa */}
-          <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
+          <button className="menu-toggle " onClick={toggleMenu} aria-label="Toggle Menu">
             ☰
           </button>
 

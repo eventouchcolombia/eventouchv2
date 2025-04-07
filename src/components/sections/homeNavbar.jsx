@@ -41,7 +41,7 @@ export const HomeNavBar = () => {
         /> 
         
          {/* Contenedor de los botones */}
-         <div className="flex gap-4 absolute bottom-[-5px] left-20 transform -translate-x-1/2">
+         {/* <div className="flex gap-4 absolute bottom-[-5px] left-20 transform -translate-x-1/2">
           <img
             src="/Boton izq.png"
             alt="Botón izquierdo"
@@ -52,7 +52,7 @@ export const HomeNavBar = () => {
             alt="Botón derecho"
             className="w-20 h-20 cursor-pointer"
           />
-        </div>
+        </div> */}
 
       </div>
       
