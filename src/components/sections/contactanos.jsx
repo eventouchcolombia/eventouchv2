@@ -10,7 +10,7 @@ export const Contactanos = () => {
       <div className="flex flex-col md:flex-row w-full h-full md:pl-70 ">
         
         {/* FORM */}
-        <div className="md:w-1/2  md:px-24    ">
+        <div className="md:w-1/2 p-12 md:px-24    ">
           <h2 className="text-5xl  text-left font-bold mb-6 ">Lleva tu Marca al <br /> Siguiente Nivel</h2>
 
           <form className="grid grid-cols-1 md:grid-cols-2 gap-4 md:pt-17">
