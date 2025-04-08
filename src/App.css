@@ -4,6 +4,7 @@
 
 * {
   margin: 0;
+  
   box-sizing: border-box;
 }
 
@@ -74,7 +75,15 @@ body.dark-mode nav .active{
 
 nav.scrolled {
   padding: 1rem 0;
+
+  display: flex;
+  align-items: self-start;
+  justify-content: self-start;
+  width: 100%;
+  z-index: 9999;
+
 }
+
 
 nav .container .row {
   display: flex;
@@ -84,6 +93,7 @@ nav .container .row {
 
 nav .container .row .logo {
   font-size: 2rem;
+  
 }
 
 nav .container .row .menu-bar {
@@ -121,7 +131,11 @@ section {
   background-color: white !important;
   transition: background-color 0.3s ease-in-out;
 }
-
+/* #Contactanos {
+  background-color: rgba(231, 170, 254, 1) !important;
+  transition: background-color 0.3s ease-in-out;
+  
+} */
 
 /* Modo oscuro: cambia el fondo a morado */
 body.dark-mode #Home,
