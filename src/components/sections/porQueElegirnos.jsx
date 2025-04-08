@@ -15,7 +15,7 @@ export const PorQueElegirnos = ()=> {
         </div>
         <div className="md:w-1/2 w-full h-screen flex  items-center justify-center ">
         <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3  w-6/7 h-7/8 md:w-full md:h-full gap-6  md:pt-60 md:pl-20 md:pl-10 md:pr-35 md:pb-35 ">
-            <div id="dataCard"  className="md:w-full md:h-full grid-cols-2 grid grid-rows-1 gap-6 rounded-3xl   justify-center text-white ">
+            <div  className="md:w-full md:h-full grid-cols-2 grid grid-rows-1 gap-6 rounded-3xl   justify-center text-white ">
                 <div className="h-full w-full rounded-3xl bg-cover bg-center filter grayscale"
                     style={{ backgroundImage: `url(${mujerTotem})` }}></div>
                 <div className="h-full w-full rounded-3xl bg-cover bg-center filter grayscale"
@@ -24,13 +24,13 @@ export const PorQueElegirnos = ()=> {
             <div id="dataCardWhite" className="w-full h-full bg-[rgba(92,41,112,1)] rounded-3xl hidden md:flex flex-col items-center justify-center text-white p-12">
 
             </div>
-            <div id="dataCard"  className="md:w-full md:h-full  grid-cols-2 hidden md:grid grid-rows-1 gap-6 rounded-3xl   justify-center text-white ">
+            <div  className="md:w-full md:h-full  grid-cols-2 hidden md:grid grid-rows-1 gap-6 rounded-3xl   justify-center text-white ">
                 <div className="h-full w-full rounded-3xl bg-cover bg-center filter grayscale"
                     style={{ backgroundImage: `url(${mujerTotem})` }}></div>
                 <div className="h-full w-full rounded-3xl bg-cover bg-center filter grayscale"
                     style={{ backgroundImage: `url(${mujerTotem})` }}></div>
             </div >
-            <div id="dataCard"  className="md:w-full md:h-full  grid-cols-2 hidden md:grid grid-rows-1 gap-6 rounded-3xl   justify-center text-white ">
+            <div  className="md:w-full md:h-full  grid-cols-2 hidden md:grid grid-rows-1 gap-6 rounded-3xl   justify-center text-white ">
                 <div className="h-full w-full rounded-3xl bg-cover bg-center filter grayscale"
                     style={{ backgroundImage: `url(${mujerTotem})` }}></div>
                 <div className="h-full w-full rounded-3xl bg-cover bg-center filter grayscale"
@@ -39,7 +39,7 @@ export const PorQueElegirnos = ()=> {
             <div id="dataCard" className="w-full h-full bg-[rgba(28,15,33,1)] rounded-3xl hidden md:flex flex-col items-center justify-center text-white p-12">
 
             </div>
-            <div id="dataCard"  className="w-full h-full  grid-cols-2 grid grid-rows-1 gap-6 rounded-3xl   justify-center text-white ">
+            <div  className="w-full h-full  grid-cols-2 grid grid-rows-1 gap-6 rounded-3xl   justify-center text-white ">
                 <div className="h-full w-full rounded-3xl bg-cover bg-center filter grayscale"
                     style={{ backgroundImage: `url(${mujerTotem})` }}></div>
                 <div className="h-full w-full rounded-3xl bg-cover bg-center filter grayscale"
