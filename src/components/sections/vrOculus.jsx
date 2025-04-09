@@ -41,11 +41,44 @@ export const VrOculus = () => {
               Beneficios de Oculus <br />
               para tu Marca
             </h2>
-            <p className="md:text-xl text-3xl text-left">
-              <span className="font-semibold">Inmersion Total:</span>{" "}
-              Captura la atencion de tu publico con<br />
-              experiencias que lo trasnportan a otra realidad
-            </p>
+            <div className="flex items-center gap-4 md:text-2xl text-3xl text-left">
+              <img
+                src="/Polygon 1.png"
+                alt="Viñeta"
+                className="w-6 h-6 mr-4  flex-shrink-0"
+              />
+              
+              <p>
+                <span className="font-semibold ">Inmersion Total:</span> Captura
+                la atencion de tu publico con experiencias que lo trasnportan a
+                otra realidad
+              </p>
+            </div>
+            <div className="flex items-center gap-4 md:text-2xl text-3xl text-left">
+              <img
+                src="/Polygon 1.png"
+                alt="Viñeta"
+                className="w-6 h-6 mr-4 flex-shrink-0"
+              />
+              <p>
+                <span className="font-semibold">Inmersion Total:</span> Captura
+                la atencion de tu publico con experiencias que lo trasnportan a
+                otra realidad
+              </p>
+            </div>
+            <div className="flex items-center  gap-4 md:text-2xl text-3xl text-left">
+              <img
+                src="/Polygon 1.png"
+                alt="Viñeta"
+                className="w-6 h-6 mr-4 flex-shrink-0"
+              />
+              <p>
+                <span className="font-semibold">Inmersion Total:</span> Captura
+                la atencion de tu publico con experiencias que lo trasnportan a
+                otra realidad
+              </p>
+            </div>
+
             <div className="flex gap-6 mt-6">
               <button className="bg-[rgba(92,41,112,1)] text-white rounded-full px-6 py-4 text-2xl font-bold w-72">
                 Explora el Futuro
