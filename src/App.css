@@ -34,7 +34,10 @@ a {
   transition: color 0.3s ease-in-out;
 }
 
-a:hover,
+a:hover {
+  color: gray;
+  
+}
 a.active {
   color: var(--purple-color);
   font-weight: 800 !important;
@@ -128,8 +131,11 @@ section {
 #VR-Oculus,
 [id="¿Por-Que-Elegirnos?"],
 #Contactanos {
-  background-color: white !important;
-  transition: background-color 0.3s ease-in-out;
+  background-image: url('/fondoBlanco.png'); /* Ruta relativa desde la carpeta public */
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  transition: background-image 0.3s ease-in-out;
 }
 /* #Contactanos {
   background-color: rgba(231, 170, 254, 1) !important;
@@ -147,13 +153,15 @@ body.dark-mode #Nuestros-Servicios,
 body.dark-mode #VR-Oculus,
 body.dark-mode [id="¿Por-Que-Elegirnos?"],
 body.dark-mode #Contactanos {
-  background-color: var(--purple-color) !important;
-  color: white ;
-  
-  transition: background-color 0.3s ease-in-out;
+  background-image: url('/fondoMorado.png'); /* Ruta relativa desde la carpeta public */
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  color: white;
+  transition: background-image 0.3s ease-in-out;
 }
 body.dark-mode .side-navbar {
-  background-color: var(--purple-color) !important;
+ 
   color: white ;
   transition: background-color 0.3s ease-in-out;
 }
