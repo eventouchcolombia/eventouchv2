@@ -31,11 +31,11 @@ export const HomeNavBar = () => {
   return (
     <section
       id="Home"
-      className="flex items-start justify-center min-h-screen gap-16 "
+      className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-8 md:gap-16 px-4 md:px-0"
     >
       {/* Contenedor del texto */}
-      <div className="text-left pl-56">
-        <h1 className="text-6xl font-bold">
+      <div className="text-center md:text-left md:pl-56">
+        <h1 className="text-4xl text-left md:text-6xl font-bold">
           lleva tu marca al siguiente
           <br />
           nivel con experiencias
@@ -43,19 +43,19 @@ export const HomeNavBar = () => {
           interactivas que cautivan a <br />
           tu audiencia
         </h1>
-        <p className="text-2xl mt-4">
+        <p className="text-2xl text-left md:text-2xl mt-4">
           <br />
           En EvenTouch, transformamos la publicidad
           <br />
           tradicional en experiencias memorables
         </p>
         <button
-          className="mt-6 text-2xl text-white font-semibold w-56 h-16 rounded-full cursor-pointer"
-          style={{ backgroundColor: "#753E89" }}
-          onClick={scrollToContactanos} 
-        >
-          quiero innovar
-        </button>
+  className="mt-6 text-3xl md:text-2xl text-white font-semibold w-[100%]  md:w-56 h-20 md:h-16 rounded-full cursor-pointer"
+  style={{ backgroundColor: "#753E89" }}
+  onClick={scrollToContactanos}
+>
+  !quiero innovar¡
+</button>
       </div>
 
       {/* Contenedor del carrusel */}
@@ -63,24 +63,24 @@ export const HomeNavBar = () => {
         <img
           src={images[currentIndex]}
           alt={`Imagen ${currentIndex + 1}`}
-          className="w-[450px] h-[450px] rounded-4xl object-cover"
+          className="w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-4xl object-cover"
         />
 
         {/* Contenedor de los botones */}
-        <div className="flex gap-4 absolute bottom-[-5px] left-1/2 transform -translate-x-1/2">
-          <img
-            src="/Boton izq.png"
-            alt="Botón izquierdo"
-            className="w-20 h-20 cursor-pointer"
-            onClick={handlePrev}
-          />
-          <img
-            src="/Boton der.png"
-            alt="Botón derecho"
-            className="w-20 h-20 cursor-pointer"
-            onClick={handleNext}
-          />
-        </div>
+        <div className="flex gap-4 relative bottom-0 md:bottom-[-5px] left-1/2 transform -translate-x-1/2">
+  <img
+    src="/Boton izq.png"
+    alt="Botón izquierdo"
+    className="w-12 h-12 md:w-20 md:h-20 cursor-pointer"
+    onClick={handlePrev}
+  />
+  <img
+    src="/Boton der.png"
+    alt="Botón derecho"
+    className="w-12 h-12 md:w-20 md:h-20 cursor-pointer"
+    onClick={handleNext}
+  />
+</div>
       </div>
     </section>
   );
