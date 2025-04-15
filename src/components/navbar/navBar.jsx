@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { sectionIds } from "./sectionIds";
 import { Link } from "react-router-dom";
 import Logo from "../../utilities/images/Logo.png";
+import LogoDarkMode from "../../utilities/images/LogoDarkMode.png";
 import whatsapp from "../../utilities/images/whatsapp.png";
 import instagram from "../../utilities/images/instagram.png";
 import linkedin from "../../utilities/images/linkedin.png";
@@ -35,18 +36,28 @@ const NavBar = ({ activeLink, onScrollToSection }) => {
       <div className="container">
         <div className="row">
           <div className="logo">
-            <img src={Logo} alt="Logo" />
+          <img src={darkMode ? LogoDarkMode : Logo} alt="Logo" />
+          </div>
+
+          {/* Botón Dark Mode */}
+          <div className="flex items-center">
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                className="sr-only peer"
+                checked={darkMode}
+                onChange={toggleDarkMode}
+              />
+              <div className="w-15 h-9 bg-gray-200 peer-focus:outline-none  dark:bg-gray-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-8 after:w-8 after:transition-all peer-checked:bg-gray-600"></div>
+            </label>
           </div>
 
           {/* Botón de menú hamburguesa */}
-          <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
+          <button className="menu-toggle " onClick={toggleMenu} aria-label="Toggle Menu">
             ☰
           </button>
 
-          {/* Botón Dark Mode */}
-          <button className="dark-mode-toggle" onClick={toggleDarkMode}>
-            {darkMode ? "🌙" : "☀️"}
-          </button>
+
 
           {/* Menú de navegación */}
           <ul className={`menu-bar ${menuOpen ? "show" : ""}`}>
