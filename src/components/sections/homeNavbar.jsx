@@ -15,7 +15,7 @@ export const HomeNavBar = () => {
     );
   };
 
-  const handleNext = () => {
+  const handleNext  = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
