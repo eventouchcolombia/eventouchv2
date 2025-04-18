@@ -18,6 +18,9 @@ export default {
       },
     },
     plugins: [],
+    corePlugins: {
+      scrollSnapType: true,
+    },
     darkMode: "class", // Habilita el modo oscuro con la clase "dark"
   };
   

@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Mousewheel } from 'swiper/modules'; // 👈 agrega Mousewheel
 import { Link } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/mousewheel'; // 👈 opcional pero recomendado
 import { servicios } from '../../utilities/servicesJson/servicesJson';
-
 
 export const NuestrosServicios = () => {
   const swiperRef = useRef(null);
@@ -21,8 +21,12 @@ export const NuestrosServicios = () => {
         <div className="flex flex-col items-center w-full h-full gap-30 md:gap-15">
           <div className="w-full md:pl-80 pl-[10%]">
             <Swiper
-              modules={[Pagination]}
+              modules={[Pagination, Mousewheel]} // 👈 agrega Mousewheel aquí
               onSwiper={(swiper) => (swiperRef.current = swiper)}
+              mousewheel={{
+                forceToAxis: true, // evita conflictos con scroll vertical de página
+                sensitivity: 1,
+              }}
               spaceBetween={1.2}
               slidesPerView={1.2}
               breakpoints={{
@@ -54,7 +58,6 @@ export const NuestrosServicios = () => {
             </Swiper>
           </div>
 
-          {/* Flechas debajo del carrusel */}
           <div className="flex md:justify-end justify-center gap-10 mt-6 w-full md:pr-35">
             <button
               onClick={() => swiperRef.current?.slidePrev()}

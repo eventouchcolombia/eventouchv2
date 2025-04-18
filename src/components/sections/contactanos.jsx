@@ -38,7 +38,7 @@ export const Contactanos = () => {
   };
 
   return (
-    <section id="Contactanos" className="w-screen h-full">
+    <section id="Contactanos" className="w-screen h-full ">
       <div className="flex flex-col md:flex-row w-full h-full md:pl-70">
         {/* FORM */}
         <div className="md:w-1/2 p-12 md:px-24">
