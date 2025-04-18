@@ -1,3 +1,5 @@
+import React from 'react'; // 👈 ¡Esto es necesario!
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
