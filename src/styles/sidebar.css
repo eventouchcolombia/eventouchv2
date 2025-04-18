@@ -1,0 +1,107 @@
+/* styles/sidebar.css */
+
+.side-navbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 10rem;
+    top: 56%;
+    transform: translateY(-50%);
+  }
+  
+  .side-navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .side-navbar li {
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: rgba(117, 62, 137, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .side-navbar li:hover {
+    background-color: #aaa;
+  }
+  
+  .side-navbar .active {
+    font-weight: bold;
+    display: flex ;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: purple !important;
+    color: white;
+    border: 0.1px solid black;
+  }
+  
+  .nav-arrow {
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+  }
+  
+  .nav-arrow:hover {
+    background-color: #aaa;
+  }
+  
+  .nav-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .nav-arrow.up {
+    margin-bottom: 1rem;
+  }
+  
+  .nav-arrow.down {
+    margin-top: 1rem;
+  }
+  
+  .nav-arrow.active {
+    background-color: purple !important;
+    color: white;
+    border: 0.1px solid black;
+  }
+  
+  /* Modo oscuro */
+  body.dark-mode .side-navbar {
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  body.dark-mode .side-navbar .active {
+    background-color: rgba(231, 170, 254, 1) !important;
+    border: none;
+    color: black;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .side-navbar {
+      display: none;
+    }
+  }
+  

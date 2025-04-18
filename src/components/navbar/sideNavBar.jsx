@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from "react";
+import "../../styles/sidebar.css"; 
 import { sectionIds } from "./sectionIds";
 
 const SideNavBar = ({ activeLink, onScrollToSection }) => {

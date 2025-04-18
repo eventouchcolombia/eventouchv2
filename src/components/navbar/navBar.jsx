@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../styles/navbar.css";
 import { sectionIds } from "./sectionIds";
 import { Link } from "react-router-dom";
 import Logo from "../../utilities/images/Logo.png";
