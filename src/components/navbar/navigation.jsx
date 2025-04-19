@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NavBar from "./navBar";
 import SideNavBar from "./sideNavBar";
 import { sectionIds } from "./sectionIds";
@@ -7,16 +7,35 @@ const normalizeId = (sectionId) => sectionId.replace(/\s+/g, "-");
 
 export const Navigation = () => {
   const [activeLink, setActiveLink] = useState("Home");
+  const scrollingRef = useRef(false); // Flag para evitar conflicto entre scroll manual y scroll detectado
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(normalizeId(sectionId));
     const container = document.querySelector(".App");
 
     if (element && container) {
+      scrollingRef.current = true;
+
       container.scrollTo({
         top: element.offsetTop,
-        behavior: "smooth"
+        behavior: "smooth",
       });
+
+      // Espera hasta que el scroll termina para cambiar el estado
+      const checkIfDone = () => {
+        const currentTop = container.scrollTop;
+        const targetTop = element.offsetTop;
+
+        if (Math.abs(currentTop - targetTop) < 5) {
+          scrollingRef.current = false;
+          setActiveLink(sectionId); // Solo actualizamos aquí
+        } else {
+          // sigue esperando
+          requestAnimationFrame(checkIfDone);
+        }
+      };
+
+      requestAnimationFrame(checkIfDone);
     }
   };
 
@@ -24,6 +43,8 @@ export const Navigation = () => {
     const container = document.querySelector(".App");
 
     const determineActiveSection = () => {
+      if (scrollingRef.current) return;
+
       let newActiveLink = "";
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {

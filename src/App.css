@@ -148,3 +148,8 @@ body.dark-mode #dataCardWhite {
 html {
   font-size: 55%;}
 }
+/* .clipped-image {
+  clip-path: path('M 0 0 H 300 V 300     H 100 Q 80 280, 60 260 Q 40 240, 0 220 Z')                
+} */
+
+

@@ -42,15 +42,24 @@ const NavBar = ({ activeLink, onScrollToSection }) => {
 
           {/* Botón Dark Mode */}
           <div className="flex items-center">
-            <label className="relative inline-flex items-center cursor-pointer">
-              <input
-                type="checkbox"
-                className="sr-only peer"
-                checked={darkMode}
-                onChange={toggleDarkMode}
+          <button
+              onClick={toggleDarkMode}
+              className="dark-mode-toggle"
+              aria-label="Toggle Dark Mode"
+              title={darkMode ? "Light Mode" : "Dark Mode"}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                padding: "0",
+              }}
+            >
+              <img
+                src={darkMode ? "/moon.png" : "/sun.png"}
+                alt={darkMode ? "Modo Oscuro" : "Modo Claro"}
+                style={{ width: "22px", height: "22px" }}
               />
-              <div className="w-15 h-9 bg-gray-200 peer-focus:outline-none  dark:bg-gray-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-8 after:w-8 after:transition-all peer-checked:bg-gray-600"></div>
-            </label>
+            </button>
           </div>
 
           {/* Botón de menú hamburguesa */}

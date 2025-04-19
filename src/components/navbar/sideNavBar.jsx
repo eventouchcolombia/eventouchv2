@@ -4,22 +4,24 @@ import "../../styles/sidebar.css";
 import { sectionIds } from "./sectionIds";
 
 const SideNavBar = ({ activeLink, onScrollToSection }) => {
-  const [currentIndex, setCurrentIndex] = useState(sectionIds.indexOf(activeLink));
+
 
   // Actualiza el índice cuando activeLink cambia
-  useEffect(() => {
-    setCurrentIndex(sectionIds.indexOf(activeLink));
-  }, [activeLink]);
+  const currentIndex = sectionIds.indexOf(activeLink);
+
 
   const goToPrevious = () => {
-    if (currentIndex > 0) {
-      onScrollToSection(sectionIds[currentIndex - 1]);
+    const currentIdx = sectionIds.indexOf(activeLink);
+     console.log("Going to:", sectionIds[currentIdx - 1]); // 👈
+    if (currentIdx > 0) {
+      onScrollToSection(sectionIds[currentIdx - 1]);
     }
   };
-
+  
   const goToNext = () => {
-    if (currentIndex < sectionIds.length - 1) {
-      onScrollToSection(sectionIds[currentIndex + 1]);
+    const currentIdx = sectionIds.indexOf(activeLink);
+    if (currentIdx < sectionIds.length - 1) {
+      onScrollToSection(sectionIds[currentIdx + 1]);
     }
   };
 
@@ -36,17 +38,26 @@ const SideNavBar = ({ activeLink, onScrollToSection }) => {
       </button>
 
       <ul>
-        {sectionIds.map((sectionId, i) => (
-          <li key={i}>
-            <span
-              className={activeLink === sectionId ? "active" : ""}
-              onClick={() => onScrollToSection(sectionId)}
-            >
-              {i + 1}
-            </span>
-          </li>
-        ))}
-      </ul>
+  {sectionIds.map((sectionId, i) => (
+    <li key={i}>
+      <span
+        className={activeLink === sectionId ? "active" : ""}
+        onClick={() => onScrollToSection(sectionId)}
+      >
+        {i === 0 ? (
+          <img
+            src="/icons/homeicon.png"
+            alt="Home"
+            className="home-icon"
+          />
+        ) : (
+          i + 1
+        )}
+      </span>
+    </li>
+  ))}
+</ul>
+
 
       {/* Flecha abajo */}
       <button
