@@ -44,7 +44,7 @@ nav {
   }
   
   nav .container .row .logo {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   
   nav .container .row .menu-bar {
@@ -101,11 +101,22 @@ nav {
   
     .menu-toggle {
       display: block;
-      background: none;
+      background: none !important;
       border: none;
       font-size: 2.5rem;
       cursor: pointer;
       color: var(--purple-color);
+    }
+    body.dark-mode .menu-toggle {
+      color: white;
+      background-color: none  !important;
+    }
+    .menu-toggle:hover {
+      color: black 
+      !important;
+    }
+    body.dark-mode .menu-toggle:active {
+      color: white !important;
     }
   }
   
@@ -115,6 +126,7 @@ nav {
   
   .dark-mode-toggle img:hover {
     transform: scale(1.1);
+    background-color: none;
   }
 
 

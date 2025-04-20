@@ -19,7 +19,7 @@ export const NuestrosServicios = () => {
         </h2>
 
         <div className="flex flex-col items-center w-full h-full gap-30 md:gap-15">
-          <div className="w-full md:pl-80 pl-[10%]">
+          <div className="w-full md:pl-80 pl-[10%] ">
             <Swiper
               modules={[Pagination, Mousewheel]} // 👈 agrega Mousewheel aquí
               onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -39,19 +39,19 @@ export const NuestrosServicios = () => {
               {servicios.map((servicio, index) => (
                 <SwiperSlide key={index}>
                   <div
-                    className={`tt h-[450px] w-[270px] md:w-[200px] md:h-[310px]  rounded-2xl p-10 text-white bg-gradient-to-br ${servicio.color} shadow-lg hover:scale-105 transition-transform duration-300 justify-end flex flex-col items-center gap-10 md:gap-2 pb-10 md:pb-4`}
+                    className={`tt h-[450px] w-[270px] md:w-[200px] md:h-[310px]  rounded-2xl p-10 text-white bg-gradient-to-br ${servicio.color} shadow-lg  duration-300 justify-end flex flex-col items-center gap-10 md:gap-2 pb-10 md:pb-4`}
                   >
                     <h3 className="w-full text-5xl md:text-3xl font-semibold text-left pb-10  ">
                       {servicio.nombre}
                     </h3>
                     <p className="text-3xl md:text-lg font-light text-left pr-8 md:pr-9">{servicio.descripcion}</p>
-                    <Link
+                    <button
                       to={`/servicios/${servicio.id}`}
                       className='w-full mx-auto h-1/8 text-white !important  bg-[#753E89] md:text-xl text-3xl font-semibold rounded-full hover:bg-purple-800 transition text-center pt-2 pb-2 items-center justify-center flex'
                       style={{ color: 'white' }}
                     >
                       ¡Quiero innovar!
-                    </Link>
+                    </button>
                   </div>
                 </SwiperSlide>
               ))}
@@ -59,18 +59,20 @@ export const NuestrosServicios = () => {
           </div>
 
           <div className="flex md:justify-end justify-center gap-10 mt-6 w-full md:pr-35">
-            <button
+            <img
               onClick={() => swiperRef.current?.slidePrev()}
               className="w-25 h-25 md:h-15 md:w-15 bg-[rgba(117,62,137,0.2)] rounded-full hover:bg-gray-400 transition text-2xl font-bold flex items-center justify-center"
+              src="/Boton izq.png"
             >
-              ←
-            </button>
-            <button
+              
+            </img>
+            <img
               onClick={() => swiperRef.current?.slideNext()}
-              className="w-25 h-25 md:h-15 md:w-15 bg-[rgba(117,62,137,0.2)] rounded-full hover:bg-gray-400 transition text-2xl font-bold flex items-center justify-center"
+              className="w-25 h-25 md:h-15 md:w-15 bg-[rgba(117,62,137,0.2)] rounded-full hover:bg-gray-400 hover:text-white transition text-2xl font-bold flex items-center justify-center"
+              src="/Boton der.png"
             >
-              →
-            </button>
+              
+            </img>
           </div>
         </div>
       </div>

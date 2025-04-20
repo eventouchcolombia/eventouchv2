@@ -50,8 +50,8 @@ export const HomeNavBar = () => {
           tradicional en experiencias memorables
         </p>
         <button
-          className="mt-6 text-3xl md:text-2xl text-white font-semibold w-[100%] md:w-56 h-20 md:h-16 rounded-full cursor-pointer"
-          style={{ backgroundColor: "#753E89" }}
+          className="mt-6 text-3xl md:text-2xl text-white font-semibold w-[100%] md:w-56 h-20 md:h-16 rounded-full cursor-pointer bg-[#753E89]"
+          
           onClick={scrollToContactanos}
         >
           ¡Quiero innovar!
@@ -91,17 +91,17 @@ export const HomeNavBar = () => {
         </Swiper>
 
         {/* Botones de navegación dentro de la imagen */}
-        <div className="absolute bottom-4 left-4 flex gap-4 z-10">
+        <div className="absolute  bottom-4 left-4 flex gap-4 z-10 ">
           <img
             src="/Boton izq.png"
             alt="Botón izquierdo"
-            className="w-12 h-12 md:w-16 md:h-16 cursor-pointer bg-[rgba(117,62,137,0.2)] rounded-full hover:bg-gray-400 transition"  
+            className="w-12 h-12 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition"  
             onClick={handlePrev}
           />
           <img
             src="/Boton der.png"
             alt="Botón derecho"
-            className="w-12 h-12 md:w-16 md:h-16 cursor-pointer bg-[rgba(117,62,137,0.2)] rounded-full hover:bg-gray-400 transition" 
+            className="w-12 h-12 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition" 
             onClick={handleNext}
           />
         </div>

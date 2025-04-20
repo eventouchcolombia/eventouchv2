@@ -36,15 +36,13 @@ const NavBar = ({ activeLink, onScrollToSection }) => {
     <nav className={`scrolled ${menuOpen ? "open" : ""}`}>
       <div className="container">
         <div className="row">
-          <div className="logo">
-          <img src={darkMode ? LogoDarkMode : Logo} alt="Logo" />
-          </div>
-
-          {/* Botón Dark Mode */}
-          <div className="flex items-center">
+          <div className="logo flex flex-row gap-30">
+          <img src={darkMode ? LogoDarkMode : Logo} className='logo h-2/3 w-3/6'  alt="Logo" />
+                    {/* Botón Dark Mode */}
+                    <div className="flex  items-center">
           <button
               onClick={toggleDarkMode}
-              className="dark-mode-toggle"
+              className="dark-mode-toggle pl-4"
               aria-label="Toggle Dark Mode"
               title={darkMode ? "Light Mode" : "Dark Mode"}
               style={{
@@ -61,6 +59,9 @@ const NavBar = ({ activeLink, onScrollToSection }) => {
               />
             </button>
           </div>
+          </div>
+
+
 
           {/* Botón de menú hamburguesa */}
           <button className="menu-toggle " onClick={toggleMenu} aria-label="Toggle Menu">

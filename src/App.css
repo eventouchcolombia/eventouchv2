@@ -40,11 +40,12 @@ ul {
 a {
   text-decoration: none;
   color: #000;
-  transition: color 0.3s ease-in-out;
+  transition: transform 0.2s ease, color 0.3s ease-in-out;
 }
 
 a:hover {
   color: gray;
+  
 }
 
 a.active {
@@ -153,3 +154,14 @@ html {
 } */
 
 
+button:hover {
+background-color: #1C0F21;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode button:hover{
+  background-color: #E7AAFE ;
+  color: black !important;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}

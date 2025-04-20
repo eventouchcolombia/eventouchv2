@@ -22,11 +22,12 @@
   .side-navbar li {
     cursor: pointer;
     width: 3rem;
-    height: 3rem;
+    height: 3.3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
+  
     border-radius: 50%;
     background-color: rgba(117, 62, 137, 0.1);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -40,11 +41,11 @@
     font-weight: bold;
     display: flex ;
     width: 3rem;
-    height: 3rem;
+    height: 3.3rem;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    background-color: purple !important;
+    background-color: #753E89 !important;
     color: white;
     border: 0.1px solid black;
   }
