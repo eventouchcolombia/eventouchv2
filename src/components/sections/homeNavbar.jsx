@@ -1,14 +1,22 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel, Autoplay } from "swiper/modules";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/mousewheel';
 import { Link } from "react-router-dom";
+import { AnimatedSection } from "../animations/animationSection";
 
 export const HomeNavBar = () => {
   const swiperRef = useRef(null);
+
+  const { ref, inView } = useInView({
+    threshold: 0.3, // Se activa cuando el 30% está visible
+    triggerOnce: false, // ⚠️ Necesario para que se repita al entrar/salir
+  });
 
   const images = [
     "/totem.jpg",
@@ -31,35 +39,75 @@ export const HomeNavBar = () => {
     }
   };
 
+
+  const containerVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        staggerChildren: 0.5,
+        duration: 0.8,
+        ease: "easeOut"
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
   return (
     <section
       id="Home"
+      ref={ref}
       className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-40 md:gap-16 px-4 md:px-0"
     >
+      
       {/* Contenedor del texto */}
-      <div className="text-center md:text-left flex flex-col gap-10 md:pl-56">
-        <h1 className="text-5xl text-left md:text-6xl font-bold">
+      <motion.div
+        className="text-center md:text-left flex flex-col gap-10 md:pl-56"
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
+        <motion.h1
+          className="text-5xl text-left md:text-6xl font-bold"
+          variants={itemVariants}
+        >
           lleva tu marca al siguiente <br />
           nivel con experiencias <br />
           interactivas que cautivan a <br />
           tu audiencia
-        </h1>
-        <p className="text-3xl text-left md:text-2xl mt-4">
+        </motion.h1>
+        <motion.p
+          className="text-3xl text-left md:text-2xl mt-4"
+          variants={itemVariants}
+        >
           <br />
           En EvenTouch, transformamos la publicidad <br />
           tradicional en experiencias memorables
-        </p>
-        <button
-          className="mt-6 text-3xl md:text-2xl text-white font-semibold w-[100%] md:w-56 h-20 md:h-16 rounded-full cursor-pointer"
-          style={{ backgroundColor: "#753E89" }}
-          onClick={scrollToContactanos}
+        </motion.p>
+        <motion.button
+          className="mt-6 text-3xl md:text-2xl text-white font-semibold w-[100%] md:w-56 h-20 md:h-16 rounded-full cursor-pointer bg-[#753E89]"
+          onClick={() =>
+            document.getElementById("Contactanos")?.scrollIntoView({ behavior: "smooth" })
+          }
+          variants={itemVariants}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           ¡Quiero innovar!
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
 
       {/* Contenedor del carrusel con botones dentro */}
-      <div className="relative max-w-[90vw] md:max-w-[35vw]">
+      <motion.div
+        className="relative max-w-[90vw] md:max-w-[35vw]"
+        initial={{ opacity: 0, x: 50 }}
+        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <Swiper
           modules={[Pagination, Mousewheel, Autoplay]}
           onSwiper={(swiper) => {
@@ -105,7 +153,7 @@ export const HomeNavBar = () => {
             onClick={handleNext}
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

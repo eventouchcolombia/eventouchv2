@@ -45,12 +45,11 @@ export const VrOculus = () => {
               <img
                 src="/Polygon 1.png"
                 alt="Viñeta"
-                className="w-6 h-6 mr-4  flex-shrink-0"
+                className="w-6 h-6 mr-4 flex-shrink-0"
               />
-              
               <p>
-                <span className="font-semibold ">Inmersion Total:</span> Captura
-                la atencion de tu publico con experiencias que lo trasnportan a
+                <span className="font-semibold">Inmersión Total:</span> Captura
+                la atención de tu público con experiencias que lo transportan a
                 otra realidad
               </p>
             </div>
@@ -61,20 +60,20 @@ export const VrOculus = () => {
                 className="w-6 h-6 mr-4 flex-shrink-0"
               />
               <p>
-                <span className="font-semibold">Inmersion Total:</span> Captura
-                la atencion de tu publico con experiencias que lo trasnportan a
+                <span className="font-semibold">Inmersión Total:</span> Captura
+                la atención de tu público con experiencias que lo transportan a
                 otra realidad
               </p>
             </div>
-            <div className="flex items-center  gap-4 md:text-2xl text-3xl text-left">
+            <div className="flex items-center gap-4 md:text-2xl text-3xl text-left">
               <img
                 src="/Polygon 1.png"
                 alt="Viñeta"
                 className="w-6 h-6 mr-4 flex-shrink-0"
               />
               <p>
-                <span className="font-semibold">Inmersion Total:</span> Captura
-                la atencion de tu publico con experiencias que lo trasnportan a
+                <span className="font-semibold">Inmersión Total:</span> Captura
+                la atención de tu público con experiencias que lo transportan a
                 otra realidad
               </p>
             </div>
@@ -96,7 +95,7 @@ export const VrOculus = () => {
           <img
             src="/oculus.png"
             alt="Oculus VR"
-            className="max-w-full max-h-full object-contain"
+            className="max-w-full max-h-full object-contain shake-on-hover"
           />
         </div>
       </div>
