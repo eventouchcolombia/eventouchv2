@@ -34,7 +34,7 @@ const imageVariants = {
 export const PorQueElegirnos = () => {
     const AnimatedImage = ({ direction, url }) => (
         <motion.div
-        
+         
           className="h-full w-full rounded-3xl bg-cover bg-center"
           style={{ backgroundImage: `url(${url})` }}
           initial="hidden"
@@ -64,7 +64,7 @@ export const PorQueElegirnos = () => {
     <section id="¿Por-Que-Elegirnos?"
             ref={ref}
              className="w-screen h-screen">
-      <div className="flex flex-col md:flex-row w-full h-screen">
+      <div className="flex flex-col md:flex-row w-full h-screen overflow-hidden">
         {/* TEXTO */}
         <div className="flex flex-col md:h-screen md:w-2/3 justify-center px-6 md:pl-90 pl-12 md:pr-29 pr-12 pt-40 md:pt-20 gap-16 md:gap-10">
           <h2 className="md:text-5xl text-5xl font-bold text-left">

@@ -9,6 +9,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/mousewheel';
 import { Link } from "react-router-dom";
 import { AnimatedSection } from "../animations/animationSection";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
 
 export const HomeNavBar = () => {
   const swiperRef = useRef(null);
@@ -57,13 +60,28 @@ export const HomeNavBar = () => {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
+
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }, 100); // pequeño delay para asegurar que el DOM esté listo
+      }
+    }
+  }, [location.state]);
+
   return (
     <section
       id="Home"
       ref={ref}
       className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-40 md:gap-16 px-4 md:px-0"
     >
-      
+
       {/* Contenedor del texto */}
       <motion.div
         className="text-center md:text-left flex flex-col gap-10 md:pl-56"
@@ -143,13 +161,13 @@ export const HomeNavBar = () => {
           <img
             src="/Boton izq.png"
             alt="Botón izquierdo"
-            className="w-12 h-12 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition"  
+            className="w-12 h-12 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition"
             onClick={handlePrev}
           />
           <img
             src="/Boton der.png"
             alt="Botón derecho"
-            className="w-12 h-12 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition" 
+            className="w-12 h-12 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition"
             onClick={handleNext}
           />
         </div>
