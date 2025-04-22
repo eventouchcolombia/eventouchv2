@@ -50,8 +50,14 @@ const servicios = {
   },
   ruleta: {
     titulo: 'Ruleta',
+    imagen: '/ruleta.png',
     descripcion:
-      'Una experiencia interactiva que mezcla suerte, premios y engagement.',
+      'Mediante un juego interactivo con ruleta los usuarios se entretienen  y participan en promociones.',
+    beneficios: [
+      'Aumenta el engagement',
+      'Recopila datos valiosos como correos o nombres',
+       'atrae a los usuarios a tu stand',
+    ],
   },
   rompecabezas: {
     titulo: 'Rompecabezas',
