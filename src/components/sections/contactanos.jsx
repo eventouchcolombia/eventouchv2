@@ -183,7 +183,7 @@ export const Contactanos = () => {
             </button>
 
             <div className="p-2 px-4 bg-white rounded-3xl shadow-md text-sm flex items-center gap-2">
-              <span>Calle 123 #45-67, Bogotá, Colombia</span>
+              <span>Calle 123 #45-67; Bogotá, Colombia</span>
             </div>
           </div>
 
