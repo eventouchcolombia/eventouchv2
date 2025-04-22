@@ -58,6 +58,10 @@ const servicios = {
       'Recopila datos valiosos como correos o nombres',
        'atrae a los usuarios a tu stand',
     ],
+    incluciones: [
+      'Tótem interactivo',
+      'Técnico de software en sitio',
+      'Desarrollo personalizado y a la medida',]
   },
   rompecabezas: {
     titulo: 'Rompecabezas',
