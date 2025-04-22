@@ -107,6 +107,41 @@ const servicios = {
         'Transporte y montaje',
       ],
   },
+  registro: {
+    titulo: 'Punto de registro',
+    imagen: '/registro.png',
+    descripcion:
+      'Ideal para eventos en donde los usuarios pueden registrr su entrada y salida utilizando un codigo QR o correo electronico.',
+      beneficios: [
+        'Recopilacion de datos',
+        'Control de asistentes',
+        'Facilidad de uso',
+        'Seguridad mejorada',
+      ],
+      incluciones: [
+        'Tótem interactivo',
+        'Técnico de software en sitio',
+        'Desarrollo personalizado y a la medida',
+        'Transporte y montaje',
+      ],
+  },
+  catalogo: {
+    titulo: 'Catalogo de productos',
+    imagen: '/catalogo.png',
+    descripcion:
+      'Ofrecele a tus clientes un catalogo en Totem digital para ver todos los productos de tu tienda.',
+      beneficios: [
+        'Mejor experiencia para usuarios',
+        'Mas engagement',
+        'Facilidad de uso',
+      ],
+      incluciones: [
+        'Tótem interactivo',
+        'Técnico de software en sitio',
+        'Desarrollo personalizado y a la medida',
+        'Transporte y montaje',
+      ],
+  },
 };
 
 export const ServicioDetalle = () => {
@@ -173,11 +208,11 @@ export const ServicioDetalle = () => {
         </div>
 
         {servicio.imagen && (
-          <div className="w-full md:w-1/2 flex items-center justify-center bg-gray-200 p-6">
+          <div className="w-full md:w-1/2  flex items-center justify-center bg-gray-200 p-6">
             <img
               src={servicio.imagen}
               alt={`Demostración de ${servicio.titulo}`}
-              className="w-full h-auto max-w-[500px] object-contain shadow-xl rounded-xl"
+              className="w-full h-full max-w-[500px]  shadow-xl rounded-xl"
             />
           </div>
         )}
