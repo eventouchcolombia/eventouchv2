@@ -17,7 +17,7 @@ const servicios = {
       'Técnico de software en sitio',
       'Desarrollo personalizado y a la medida',
       'Transporte y montaje',
-      'impresora si es necesario *'
+      'impresora si es necesario *',
     ],
   },
   trivia: {
@@ -71,9 +71,9 @@ export const ServicioDetalle = () => {
     );
 
   return (
-    <section id="" className="w-screen h-screen">
-      <div className="flex flex-col md:flex-row w-full h-screen">
-        <div className="flex flex-col md:h-screen w-full md:w-2/3 justify-center px-6 md:pl-90 pl-12 md:pr-29 pr-12 pt-40 md:pt-20 gap-12 md:gap-10 overflow-y-auto">
+    <section className="w-screen min-h-screen md:h-screen">
+      <div className="flex flex-col md:flex-row w-full md:h-screen">
+        <div className="flex flex-col w-full md:w-2/3 justify-center px-6 md:pl-90 pl-12 md:pr-29 pr-12 pt-40 md:pt-20 gap-12 md:gap-10">
           <h2 className="md:text-5xl text-5xl font-bold text-left">
             {servicio.titulo}
           </h2>
@@ -82,37 +82,36 @@ export const ServicioDetalle = () => {
           </p>
 
           {servicio.beneficios && (
-  <div>
-    <h3 className="text-2xl text-left font-bold mb-2 ">
-      Beneficios
-    </h3>
-    <div className="flex flex-col gap-2 text-left text-xl ">
-      {servicio.beneficios.map((item, index) => (
-        <p key={index}>
-          <span className="text-purple-700 mr-2">•</span>
-          {item}
-        </p>
-      ))}
-    </div>
-  </div>
-)}
+            <div>
+              <h3 className="text-2xl text-left font-bold mb-2">
+                Beneficios
+              </h3>
+              <div className="flex flex-col gap-2 text-left text-xl">
+                {servicio.beneficios.map((item, index) => (
+                  <p key={index}>
+                    <span className="text-purple-700 mr-2">•</span>
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+          )}
 
-{servicio.incluciones && (
-  <div>
-    <h3 className="text-2xl text-left font-bold mt-6 mb-2 ">
-      Incluye
-    </h3>
-    <div className="flex flex-col gap-2 text-left text-xl">
-      {servicio.incluciones.map((item, index) => (
-        <p key={index}>
-          <span className="text-purple-700 mr-2">•</span>
-          {item}
-        </p>
-      ))}
-    </div>
-  </div>
-)}
-
+          {servicio.incluciones && (
+            <div>
+              <h3 className="text-2xl text-left font-bold mt-6 mb-2">
+                Incluye
+              </h3>
+              <div className="flex flex-col gap-2 text-left text-xl">
+                {servicio.incluciones.map((item, index) => (
+                  <p key={index}>
+                    <span className="text-purple-700 mr-2">•</span>
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+          )}
 
           <button
             onClick={() =>
@@ -124,14 +123,15 @@ export const ServicioDetalle = () => {
           </button>
         </div>
 
-        <div className="md:w-1/2 w-full h-screen flex md:items-center items-center justify-center bg-gray-200">
-        <img
-          src={servicio.imagen}
-          alt={`Demostración de ${servicio.titulo}`}
-          className="max-h-[90%] max-w-[90%] object-contain shadow-xl rounded-xl"
-        />
-
-        </div>
+        {servicio.imagen && (
+          <div className="w-full md:w-1/2 flex items-center justify-center bg-gray-200 p-6">
+            <img
+              src={servicio.imagen}
+              alt={`Demostración de ${servicio.titulo}`}
+              className="w-full h-auto max-w-[500px] object-contain shadow-xl rounded-xl"
+            />
+          </div>
+        )}
       </div>
     </section>
   );
