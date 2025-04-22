@@ -40,7 +40,7 @@ const servicios = {
   },
   'speak-ia': {
     titulo: 'Talk IA',
-    imagen: '/talkIA.png',
+    imagen: '/talkIA.png' ,
     descripcion:
       'Habla con tus clientes en tiempo real usando IA. Ideal para experiencias inmersivas.',
       beneficios: [
@@ -55,6 +55,7 @@ const servicios = {
         'Desarrollo personalizado y a la medida',
         'Transporte y montaje',
       ],
+      
   },
   desarrollos: {
     titulo: 'Desarrollos personalizados',
