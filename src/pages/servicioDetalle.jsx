@@ -89,16 +89,16 @@ const servicios = {
       'Técnico de software en sitio',
       'Desarrollo personalizado y a la medida',]
   },
-  rompecabezas: {
-    titulo: 'Rompecabezas',
-    imagen: '/rompe.png',
+  popTouch: {
+    titulo: 'PopTouch',
+    imagen: '/poptouch.png',
     descripcion:
-      'Desafía a tus usuarios con un juego que estimula la mente y los mantiene conectados con tu marca.',
+      'cada clic suma puntos y visibilidad para tu marca. ¡Interactúa y deja una impresión duradera con cada toque!',
       beneficios: [
-        'Engagement lúdico',
-        'Memorabilidad de marca',
-        'Contenido compartible',
-        'Recuerdo duradero',
+        'Atención inmediata',
+        'Participación activa',
+        'Visibilidad aumentada',
+        'Recuerdo positivo',
       ],
       incluciones: [
         'Tótem interactivo',
@@ -107,6 +107,24 @@ const servicios = {
         'Transporte y montaje',
       ],
   },
+  // rompecabezas: {
+  //   titulo: 'Rompecabezas',
+  //   imagen: '/rompe.png',
+  //   descripcion:
+  //     'Desafía a tus usuarios con un juego que estimula la mente y los mantiene conectados con tu marca.',
+  //     beneficios: [
+  //       'Engagement lúdico',
+  //       'Memorabilidad de marca',
+  //       'Contenido compartible',
+  //       'Recuerdo duradero',
+  //     ],
+  //     incluciones: [
+  //       'Tótem interactivo',
+  //       'Técnico de software en sitio',
+  //       'Desarrollo personalizado y a la medida',
+  //       'Transporte y montaje',
+  //     ],
+  // },
 };
 
 export const ServicioDetalle = () => {
