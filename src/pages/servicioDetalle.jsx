@@ -3,10 +3,10 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 const servicios = {
   photobot: {
-    titulo: 'Photobot',
+    titulo: 'Photobooth',
     imagen: '/photobot.png',
     descripcion:
-      '¡Haz que tu marca cobre vida con Photobot! Un tótem interactivo con pantalla táctil que permite a tus usuarios tomarse selfies animadas con personajes famosos o elementos de tu marca, todo con filtros marcos, animaciones y accesorios que harán cada foto inolvidable.',
+      '¡Haz que tu marca cobre vida con Photobooth! Un tótem interactivo con pantalla táctil que permite a tus usuarios tomarse selfies animadas con personajes famosos o elementos de tu marca, todo con filtros marcos, animaciones y accesorios que harán cada foto inolvidable.',
     beneficios: [
       'Aumenta el engagement',
       'Recopila datos valiosos como correos o nombres',
@@ -39,14 +39,40 @@ const servicios = {
     ],
   },
   'speak-ia': {
-    titulo: 'Speak IA',
+    titulo: 'Talk IA',
+    imagen: '/talkIA.png',
     descripcion:
       'Habla con tus clientes en tiempo real usando IA. Ideal para experiencias inmersivas.',
+      beneficios: [
+        'Interacción instantánea',
+        'Experiencias inmersivas',
+        'Eficiencia mejorada',
+        'Personalización a escala',
+      ],
+      incluciones: [
+        'Tótem interactivo',
+        'Técnico de software en sitio',
+        'Desarrollo personalizado y a la medida',
+        'Transporte y montaje',
+      ],
   },
   desarrollos: {
     titulo: 'Desarrollos personalizados',
+    imagen: '/desarrollosp.png',
     descripcion:
-      'Creamos soluciones interactivas a medida según las necesidades de tu marca.',
+      'Desarrollos a la medida para eventos: experiencias únicas, funcionales, con tu marca y de alto impacto.',
+      beneficios: [
+        'Experiencias únicas',
+        'Funcionalidades a medida',
+        'Marca diferenciada',
+        'Mayor impacto',
+      ],
+      incluciones: [
+        'Tótem interactivo',
+        'Técnico de software en sitio',
+        'Desarrollo personalizado y a la medida',
+        'Transporte y montaje',
+      ],
   },
   ruleta: {
     titulo: 'Ruleta',
@@ -55,8 +81,21 @@ const servicios = {
   },
   rompecabezas: {
     titulo: 'Rompecabezas',
+    imagen: '/rompe.png',
     descripcion:
       'Desafía a tus usuarios con un juego que estimula la mente y los mantiene conectados con tu marca.',
+      beneficios: [
+        'Engagement lúdico',
+        'Memorabilidad de marca',
+        'Contenido compartible',
+        'Recuerdo duradero',
+      ],
+      incluciones: [
+        'Tótem interactivo',
+        'Técnico de software en sitio',
+        'Desarrollo personalizado y a la medida',
+        'Transporte y montaje',
+      ],
   },
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 export const  servicios = [
   {
     id: 'photobot',
-    nombre: 'Photobot',
+    nombre: 'Photobooth',
     descripcion: 'Ofrecemos publicidad interactiva con anuncios dinámicos que captan la atención y generan mayor impacto.',
     color: 'from-purple-800 to-fuchsia-600',
   },
@@ -14,7 +14,7 @@ export const  servicios = [
   },
   {
     id: 'speak-ia',
-    nombre: 'Speak IA',
+    nombre: 'Talk IA',
     descripcion: 'Ofrecemos publicidad interactiva con anuncios dinámicos que captan la atención y generan mayor impacto.',
     color: 'from-gray-700 to-slate-500',
   },
