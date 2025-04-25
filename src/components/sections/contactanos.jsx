@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import whatsapp from "../../utilities/images/whatsapp.png";
 import instagram from "../../utilities/images/instagram.png";
 import linkedin from "../../utilities/images/linkedin.png";
-import Footer from "../Footer/Footer";
+//import Footer from "../Footer/Footer";
 
 export const Contactanos = () => {
   const form = useRef();
@@ -215,10 +215,10 @@ export const Contactanos = () => {
         </div>
       )}
     </section>
+    {/* <br></br>
     <br></br>
     <br></br>
-    <br></br>
-    <Footer/>
+    <Footer/> */}
     </>
   );
 };
