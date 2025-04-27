@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import whatsapp from "../../utilities/images/whatsapp.png";
 import instagram from "../../utilities/images/instagram.png";
 import linkedin from "../../utilities/images/linkedin.png";
+//import Footer from "../Footer/Footer";
 
 export const Contactanos = () => {
   const form = useRef();
@@ -38,6 +39,7 @@ export const Contactanos = () => {
   };
 
   return (
+    <>
     <section id="Contactanos" className="w-screen h-full ">
       <div className="flex flex-col md:flex-row w-full h-full md:pl-70">
         {/* FORM */}
@@ -222,5 +224,10 @@ export const Contactanos = () => {
         </div>
       )}
     </section>
+    {/* <br></br>
+    <br></br>
+    <br></br>
+    <Footer/> */}
+    </>
   );
 };

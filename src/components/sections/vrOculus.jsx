@@ -60,9 +60,7 @@ export const VrOculus = () => {
                 className="w-6 h-6 mr-4 flex-shrink-0"
               />
               <p>
-                <span className="font-semibold">Inmersión Total:</span> Captura
-                la atención de tu público con experiencias que lo transportan a
-                otra realidad
+                <span className="font-semibold">Interactividad Única:</span> Ofrece nuevas formas de participar y experimentar en tu evento.
               </p>
             </div>
             <div className="flex items-center gap-4 md:text-2xl text-3xl text-left">
@@ -72,9 +70,7 @@ export const VrOculus = () => {
                 className="w-6 h-6 mr-4 flex-shrink-0"
               />
               <p>
-                <span className="font-semibold">Inmersión Total:</span> Captura
-                la atención de tu público con experiencias que lo transportan a
-                otra realidad
+                <span className="font-semibold">Sensaciones Inolvidables:</span> Ofrece una vivencia tan inmersiva y realista que deja una marca duradera en la memoria.
               </p>
             </div>
 

@@ -47,7 +47,7 @@ const servicios = {
         'Interacción instantánea',
         'Experiencias inmersivas',
         'Eficiencia mejorada',
-        'Personalización a escala',
+        'Personalización a escala ',
       ],
       incluciones: [
         'Tótem interactivo',
