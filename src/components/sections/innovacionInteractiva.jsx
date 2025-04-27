@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import brandVideo from "../../utilities/images/brandVideo.mp4";
+import fondoBrand from "../../utilities/images/fondoBrand.png"; // Ruta de la imagen de fondo
 import playIcon from "../../utilities/images/play.png"; // Ruta del icono de play
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
@@ -73,7 +74,7 @@ export const InnovacionInteractiva = () => {
               ref={videoRef}
               className="w-full h-full object-cover"
               src={brandVideo} 
-              poster="URL_DE_LA_IMAGEN_AQUI"
+              poster={fondoBrand}
               controls={showControls}
               onEnded={() => { 
                 setShowControls(true);

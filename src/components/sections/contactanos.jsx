@@ -186,9 +186,18 @@ export const Contactanos = () => {
               <span>Calle 123 #45-67; Bogotá, Colombia</span>
             </div>
           </div>
-
+          
           {/* Placeholder: Image / Mapa / Contact Box */}
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4051.1404117921925!2d-74.05116689547783!3d4.765222389543011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sco!4v1745115088283!5m2!1sen!2sco" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div className="w-full h-[300px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4051.1404117921925!2d-74.05116689547783!3d4.765222389543011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sco!4v1745115088283!5m2!1sen!2sco"
+            className="w-full h-full"
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
         </div>
       </div>
 

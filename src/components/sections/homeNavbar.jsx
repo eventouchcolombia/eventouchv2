@@ -23,7 +23,7 @@ export const HomeNavBar = () => {
 
   const images = [
     "/totem.jpg",
-    "/totem2.jpg",
+    "/totem2.1.png",
     "/totem3.jpg",
   ];
 
@@ -79,7 +79,7 @@ export const HomeNavBar = () => {
     <section
       id="Home"
       ref={ref}
-      className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-40 md:gap-16 px-4 md:px-0"
+      className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-20 md:gap-16 px-4 md:px-0 !pt-40 md:!pt-50 "
     >
 
       {/* Contenedor del texto */}
@@ -161,13 +161,13 @@ export const HomeNavBar = () => {
           <img
             src="/Boton izq.png"
             alt="Botón izquierdo"
-            className="w-12 h-12 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition"
+            className="w-25 h-25 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition"
             onClick={handlePrev}
           />
           <img
             src="/Boton der.png"
             alt="Botón derecho"
-            className="w-12 h-12 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition"
+            className="w-25 h-25 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition"
             onClick={handleNext}
           />
         </div>

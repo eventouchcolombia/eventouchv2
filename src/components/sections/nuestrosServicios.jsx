@@ -40,7 +40,7 @@ export const NuestrosServicios = () => {
   };
 
   return (
-    <section id="Nuestros-Servicios" ref={ref} className="w-screen h-screen">
+    <section id="Nuestros-Servicios" ref={ref} className="w-screen h-screen !pt-20 md:!pt-60">
       <div className="flex flex-col space-y-8 h-screen w-full pt-60 md:pt-43 gap-30 md:gap-10">
         <h2 className="text-5xl font-bold text-center md:pl-80 text-left pl-12">
           Servicios que <br /> Ofrecemos
