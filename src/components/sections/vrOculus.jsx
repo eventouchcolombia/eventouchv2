@@ -50,7 +50,7 @@ export const VrOculus = () => {
               <p>
                 <span className="font-semibold">Inmersión Total:</span> Captura
                 la atención de tu público con experiencias que lo transportan a
-                otra realidad
+                otra realidad.
               </p>
             </div>
             <div className="flex items-center gap-4 md:text-2xl text-3xl text-left">
