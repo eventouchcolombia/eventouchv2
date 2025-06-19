@@ -1,66 +1,47 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Mousewheel, Autoplay } from "swiper/modules";
+import { EffectCoverflow, Pagination, Mousewheel } from "swiper/modules";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import 'swiper/css';
-import 'swiper/css/navigation';
+import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/mousewheel';
-import { Link } from "react-router-dom";
-import { AnimatedSection } from "../animations/animationSection";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
-
 
 export const HomeNavBar = () => {
   const swiperRef = useRef(null);
+  const videoRefs = useRef([]);
+  const [activeIndex, setActiveIndex] = useState(1);
+  
 
   const { ref, inView } = useInView({
-    threshold: 0.3, // Se activa cuando el 30% está visible
-    triggerOnce: false, // ⚠️ Necesario para que se repita al entrar/salir
+    threshold: 0.3,
+    triggerOnce: false,
   });
 
-  const images = [
-    "/totem.jpg",
-    "/totem2.1.png",
-    "/totem3.jpg",
+  const videos = [
+    "/macdonals.mov",
+    "/macdonals.mov",
+    "/macdonals.mov",
+    "/macdonals.mov",
+    "/macdonals.mov",
+
   ];
 
-  const handlePrev = () => {
-    swiperRef.current?.slidePrev();
-  };
-
-  const handleNext = () => {
-    swiperRef.current?.slideNext();
-  };
-
-  const scrollToContactanos = () => {
-    const contactanosSection = document.getElementById("Contactanos");
-    if (contactanosSection) {
-      contactanosSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-
-  const containerVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        staggerChildren: 0.5,
-        duration: 0.8,
-        ease: "easeOut"
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
+  useEffect(() => {
+    videoRefs.current.forEach((video, idx) => {
+      if (video) {
+        if (idx === activeIndex) {
+          video.play();
+        } else {
+          video.pause();
+          video.currentTime = 0;
+       
+        }
+      }
+    });
+  }, [activeIndex]);
 
   const location = useLocation();
 
@@ -70,7 +51,7 @@ export const HomeNavBar = () => {
       if (section) {
         setTimeout(() => {
           section.scrollIntoView({ behavior: 'smooth' });
-        }, 100); // pequeño delay para asegurar que el DOM esté listo
+        }, 100);
       }
     }
   }, [location.state]);
@@ -81,27 +62,31 @@ export const HomeNavBar = () => {
       ref={ref}
       className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-20 md:gap-16 px-4 md:px-0 !pt-40 md:!pt-50 "
     >
-
-      {/* Contenedor del texto */}
+      {/* Texto a la izquierda */}
       <motion.div
-        className="text-center md:text-left flex flex-col gap-10 md:pl-56"
-        variants={containerVariants}
+        className="text-center md:text-left flex flex-col gap-5 md:pl-76 "
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+              staggerChildren: 0.5,
+              duration: 0.8,
+              ease: "easeOut"
+            },
+          },
+        }}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
       >
-        <motion.h1
-          className="text-5xl text-left md:text-6xl font-bold"
-          variants={itemVariants}
-        >
+        <motion.h1 className="text-5xl text-left md:text-6xl font-bold">
           lleva tu marca al siguiente <br />
           nivel con experiencias <br />
           interactivas que cautivan a <br />
           tu audiencia
         </motion.h1>
-        <motion.p
-          className="text-3xl text-left md:text-2xl mt-4"
-          variants={itemVariants}
-        >
+        <motion.p className="text-3xl text-left md:text-2xl mt-4">
           <br />
           En EvenTouch, transformamos la publicidad <br />
           tradicional en experiencias memorables
@@ -111,7 +96,6 @@ export const HomeNavBar = () => {
           onClick={() =>
             document.getElementById("Contactanos")?.scrollIntoView({ behavior: "smooth" })
           }
-          variants={itemVariants}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -119,56 +103,99 @@ export const HomeNavBar = () => {
         </motion.button>
       </motion.div>
 
-      {/* Contenedor del carrusel con botones dentro */}
+      {/* Carrusel a la derecha */}
       <motion.div
-        className="relative max-w-[90vw] md:max-w-[35vw]"
+        className="relative max-w-[160vw] md:max-w-[47vw]"
         initial={{ opacity: 0, x: 50 }}
         animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
+         
       >
+
+
+  
         <Swiper
-          modules={[Pagination, Mousewheel, Autoplay]}
+        initialSlide={1} 
+          modules={[EffectCoverflow, Pagination, Mousewheel]}
+          effect="coverflow"
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+            slideShadows: false,
+          }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
-            swiper.autoplay.start(); // 👈 ¡Aquí forzamos el autoplay al montar!
+            setActiveIndex(swiper.realIndex);
+            setTimeout(() => {
+              swiper.update(); // 👈 solución aquí
+            }, 100);
           }}
-          mousewheel={{
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          spaceBetween={10}
+          slidesPerView={3.2}
+          centeredSlides={true}
+            style={{ paddingLeft: '20px', paddingRight: '20px' }}
+          loop={true}
+          loopedSlides={videos.length} // 👈 Añadir esto
+          
+          observer={true}
+          observeParents={true}
+            mousewheel={{
             forceToAxis: true,
             sensitivity: 1,
+            thresholdDelta: 10,
+            thresholdTime: 100,
           }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          spaceBetween={20}
-          slidesPerView={1}
-          loop={true}
-          className="rounded-xl"
+          speed={500}
+          pagination={{ clickable: true }}
+          className="rounded-xl custom-swiper-pagination"
+          
         >
-          {images.map((img, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={img}
-                alt={`Totem ${index + 1}`}
-                className="rounded-4xl w-full h-[450px] object-cover shadow-lg clipped-image"
+        {videos.map((videoSrc, index) => (
+          <SwiperSlide key={index}>
+            {index === activeIndex ? (
+              <video
+                ref={(el) => (videoRefs.current[index] = el)}
+                src={videoSrc}
+                className="rounded-4xl w-full h-[400px] object-cover shadow-lg"
+                muted
+                playsInline
+                poster="/macdonals.png"
+                onEnded={() => {
+                  const video = videoRefs.current[index];
+                  if (video) {
+                    video.currentTime = 0;
+                    video.play();
+                  }
+                }}
               />
-            </SwiperSlide>
-          ))}
+            ) : (
+              <img
+                src="/macdonals.png"
+                className="rounded-4xl w-full h-[400px] object-cover shadow-lg"
+                alt="Preview"
+              />
+            )}
+          </SwiperSlide>
+        ))}
+
         </Swiper>
 
-        {/* Botones de navegación dentro de la imagen */}
-        <div className="absolute  bottom-4 left-4 flex gap-4 z-10 ">
+        {/* Botones de navegación */}
+        <div className="absolute left-4 z-10 gap-4 hidden md:flex md:bottom-[14px] md:left-[-5px] sh">
           <img
             src="/Boton izq.png"
             alt="Botón izquierdo"
-            className="w-25 h-25 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition"
-            onClick={handlePrev}
+            className="w-25 h-25 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition shadow"
+            onClick={() => swiperRef.current?.slidePrev()}
           />
           <img
             src="/Boton der.png"
             alt="Botón derecho"
-            className="w-25 h-25 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition"
-            onClick={handleNext}
+            className="w-25 h-25 md:w-16 md:h-16 cursor-pointer hover:bg-[rgba(117,62,137)] rounded-full bg-purple-200 transition shadow"
+            onClick={() => swiperRef.current?.slideNext()}
           />
         </div>
       </motion.div>

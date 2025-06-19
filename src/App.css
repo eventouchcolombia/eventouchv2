@@ -185,3 +185,26 @@ body.dark-mode button:hover{
   animation: shake 0.5s;
   animation-iteration-count: 1;
 }
+
+
+
+.custom-swiper-pagination {
+  margin-top: 20px; /* ↓ baja todos los bullets */
+  text-align: center;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  width: 24px;
+  height: 6px;
+  background-color: #753E89;
+  border-radius: 4px;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #753E89;
+  transform: scale(1.2);
+}
+

@@ -6,8 +6,8 @@ nav {
   left: 0;
   width: 100%;
   padding: 1.5rem 0;
-  background: linear-gradient(180deg, white, rgba(117, 62, 137, 0.06)); /* Degradado para Light Mode */
-  box-shadow: var(--box-shadow);
+  background: linear-gradient(180deg, white); /* Degradado para Light Mode */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: padding 0.3s ease-in-out, background 0.3s ease-in-out;
 }
   
