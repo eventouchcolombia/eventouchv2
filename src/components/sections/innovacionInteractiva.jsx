@@ -74,7 +74,7 @@ export const InnovacionInteractiva = () => {
               ref={videoRef}
               className="w-full h-full object-cover"
               src={brandVideo} 
-              poster={fondoBrand}
+              poster="/logoEventouch.jpeg"
               controls={showControls}
               onEnded={() => { 
                 setShowControls(true);

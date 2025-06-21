@@ -20,14 +20,14 @@ export const HomeNavBar = () => {
     triggerOnce: false,
   });
 
-  const videos = [
-    "/macdonals.mov",
-    "/macdonals.mov",
-    "/macdonals.mov",
-    "/macdonals.mov",
-    "/macdonals.mov",
-
-  ];
+const videos = [
+  { src: "/nike.mov", poster: "/nike.png" },
+  { src: "/alpina.mov", poster: "/alpina.png" },
+  { src: "/pacman.mov", poster: "/pacman.png" },
+  { src: "/macdonals.mov", poster: "/macdonals.png" },
+  { src: "/macdonals.mov", poster: "/macdonals.png" },
+  { src: "/macdonals.mov", poster: "/macdonals.png" },
+];
 
   useEffect(() => {
     videoRefs.current.forEach((video, idx) => {
@@ -153,16 +153,16 @@ export const HomeNavBar = () => {
           className="rounded-xl custom-swiper-pagination"
           
         >
-        {videos.map((videoSrc, index) => (
+        {videos.map((video, index) => (
           <SwiperSlide key={index}>
             {index === activeIndex ? (
               <video
                 ref={(el) => (videoRefs.current[index] = el)}
-                src={videoSrc}
+                src={video.src}
                 className="rounded-4xl w-full h-[400px] object-cover shadow-lg"
                 muted
                 playsInline
-                poster="/macdonals.png"
+                poster={video.poster}
                 onEnded={() => {
                   const video = videoRefs.current[index];
                   if (video) {
@@ -173,7 +173,7 @@ export const HomeNavBar = () => {
               />
             ) : (
               <img
-                src="/macdonals.png"
+                src={video.poster}
                 className="rounded-4xl w-full h-[400px] object-cover shadow-lg"
                 alt="Preview"
               />

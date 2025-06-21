@@ -85,8 +85,8 @@ export const PorQueElegirnos = () => {
         <div className="md:w-1/2 w-full h-screen flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 w-6/7 h-7/8 md:w-full md:h-full gap-6 md:pt-60 md:pl-10 md:pr-35 md:pb-35">
             <div className="grid grid-cols-2 gap-6">
-              <AnimatedImage direction="left" url={totemImage1} />
-              <AnimatedImage direction="right" url={totemImage2} />
+              <AnimatedImage direction="left" url={"/oldparrEvento.jpeg"} />
+              <AnimatedImage direction="right" url={"/oldparrEvento.2.jpeg"} />
             </div>
 
             <div
