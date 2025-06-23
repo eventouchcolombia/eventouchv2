@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next"; // ✅ Traducción
 
 export const VrOculus = () => {
   const [showAlternateView, setShowAlternateView] = useState(false);
+  const { t } = useTranslation(); // ✅ Traducción
 
   return (
     <section id="VR-Oculus" className="w-screen h-screen">
@@ -9,80 +11,49 @@ export const VrOculus = () => {
         {!showAlternateView ? (
           <div className="Texto flex flex-col md:h-screen w-full md:w-2/3 justify-center px-6 md:pl-90 pl-12 md:pr-29 pr-12 pt-40 md:pt-20 gap-16 md:gap-10">
             <h2 className="md:text-5xl text-5xl font-bold text-left">
-              Sumérgete en la
-              <br /> Innovación con <br />
-              Experiencias en <br />
-              Realidad Virtual
+              {t("oculus.title")}
             </h2>
             <p className="md:text-2xl text-3xl text-left">
-              <span className="font-semibold">
-                ¿Te imaginas que tu marca no solo se vea, sino 
-                que se viva?
-              </span>{" "}
-              Con nuestras Experiencias <br />
-              interactivas en Oculus VR, llevamos la publicidad <br />y los
-              eventos a otro nivel.
+              {t("oculus.subtitle")}
             </p>
             <div className="flex flex-col items-center md:flex-row gap-6 ">
               <button className="bg-[rgba(92,41,112,1)] text-white rounded-full px-6 py-4 text-2xl font-bold w-2/3 md:w-72">
-                Explora el Futuro
+                {t("oculus.ctaExplore")}
               </button>
               <button
                 className="bg-white text-[rgba(92,41,112,1)] rounded-full border border-[rgba(92,41,112,1)] px-6 py-4 text-2xl font-bold w-2/3 md:w-56"
                 onClick={() => setShowAlternateView(true)}
               >
-                Beneficios
+                {t("oculus.ctaBenefits")}
               </button>
             </div>
           </div>
         ) : (
           <div className="TextBeneficios flex flex-col md:h-screen w-full md:w-2/3 justify-center px-6 md:pl-90 pl-12 md:pr-29 pr-12 pt-40 md:pt-20 gap-16 md:gap-10">
             <h2 className="md:text-4xl text-5xl font-bold text-left">
-              Beneficios de Oculus <br />
-              para tu Marca
+              {t("oculus.benefitsTitle")}
             </h2>
-            <div className="flex items-center gap-4 md:text-2xl text-3xl text-left">
-              <img
-                src="/Polygon 1.png"
-                alt="Viñeta"
-                className="w-6 h-6 mr-4 flex-shrink-0"
-              />
-              <p>
-                <span className="font-semibold">Inmersión Total:</span> Captura
-                la atención de tu público con experiencias que lo transportan a
-                otra realidad.
-              </p>
-            </div>
-            <div className="flex items-center gap-4 md:text-2xl text-3xl text-left">
-              <img
-                src="/Polygon 1.png"
-                alt="Viñeta"
-                className="w-6 h-6 mr-4 flex-shrink-0"
-              />
-              <p>
-                <span className="font-semibold">Interactividad Única:</span> Ofrece nuevas formas de participar y experimentar en tu evento.
-              </p>
-            </div>
-            <div className="flex items-center gap-4 md:text-2xl text-3xl text-left">
-              <img
-                src="/Polygon 1.png"
-                alt="Viñeta"
-                className="w-6 h-6 mr-4 flex-shrink-0"
-              />
-              <p>
-                <span className="font-semibold">Sensaciones Inolvidables:</span> Ofrece una vivencia tan inmersiva y realista que deja una marca duradera en la memoria.
-              </p>
-            </div>
+
+            {[1, 2, 3].map((num) => (
+              <div key={num} className="flex items-center gap-4 md:text-2xl text-3xl text-left">
+                <img
+                  src="/Polygon 1.png"
+                  alt="Viñeta"
+                  className="w-6 h-6 mr-4 flex-shrink-0"
+                />
+                <p>{t(`oculus.benefit${num}`)}</p>
+              </div>
+            ))}
 
             <div className="flex gap-6 mt-6">
               <button className="bg-[rgba(92,41,112,1)] text-white rounded-full px-6 py-4 text-2xl font-bold w-72">
-                Explora el Futuro
+                {t("oculus.ctaExplore")}
               </button>
               <button
                 className="bg-white text-[rgba(92,41,112,1)] rounded-full border border-[rgba(92,41,112,1)] px-6 py-4 text-2xl font-bold w-56"
                 onClick={() => setShowAlternateView(false)}
               >
-                Volver
+                {t("oculus.ctaBack")}
               </button>
             </div>
           </div>

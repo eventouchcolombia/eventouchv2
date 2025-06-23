@@ -9,9 +9,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/mousewheel';
 import { servicios } from '../../utilities/servicesJson/servicesJson';
+import { useTranslation } from 'react-i18next'; // ✅ Traducción
 
 export const NuestrosServicios = () => {
   const swiperRef = useRef(null);
+  const { t } = useTranslation(); // ✅ Traducción
 
   const { ref, inView } = useInView({
     threshold: 0.3,
@@ -43,7 +45,7 @@ export const NuestrosServicios = () => {
     <section id="Nuestros-Servicios" ref={ref} className="w-screen h-screen !pt-20 md:!pt-60">
       <div className="flex flex-col space-y-8 h-screen w-full pt-60 md:pt-43 gap-30 md:gap-10">
         <h2 className="text-5xl font-bold text-center md:pl-80 text-left pl-12">
-          Servicios que <br /> Ofrecemos
+          {t('services.title')}
         </h2>
 
         <motion.div
@@ -74,19 +76,18 @@ export const NuestrosServicios = () => {
                   <motion.div
                     variants={itemVariants}
                     className={`tt group h-[450px] w-[270px] md:w-[200px] md:h-[310px] rounded-2xl p-10 text-white bg-gradient-to-br ${servicio.color} shadow-lg hover:brightness-110 hover:shadow-2xl transition-all duration-300 justify-end flex flex-col items-center gap-10 md:gap-2 pb-10 md:pb-4`}
-
                   >
                     <h3 className="w-full text-5xl md:text-3xl font-semibold text-left pb-10">
-                      {servicio.nombre}
+                     {t(`servicesList.${servicio.id}.nombre`)}
                     </h3>
                     <p className="text-3xl md:text-lg font-light text-left pr-8 md:pr-9">
-                      {servicio.descripcion}
+                      {t(`servicesList.${servicio.id}.descripcion`)}
                     </p>
                     <Link
                       to={`/servicios/${servicio.id}`}
                       className="w-full mx-auto h-1/8 text-white bg-[#753E89] md:text-xl text-3xl font-semibold rounded-full hover:bg-purple-800 transition text-center pt-2 pb-2 items-center justify-center flex"
                     >
-                      ¡Quiero innovar!
+                      {t('services.cta')}
                     </Link>
                   </motion.div>
                 </SwiperSlide>
@@ -99,16 +100,14 @@ export const NuestrosServicios = () => {
               onClick={() => swiperRef.current?.slidePrev()}
               className="w-25 h-25 md:h-15 md:w-15 bg-[rgba(117,62,137,0.2)] rounded-full hover:bg-gray-400 transition text-2xl font-bold flex items-center justify-center"
               src="/Boton izq.png"
-            >
-              
-            </img>
+              alt="Previous"
+            />
             <img
               onClick={() => swiperRef.current?.slideNext()}
               className="w-25 h-25 md:h-15 md:w-15 bg-[rgba(117,62,137,0.2)] rounded-full hover:bg-gray-400 hover:text-white transition text-2xl font-bold flex items-center justify-center"
               src="/Boton der.png"
-            >
-              
-            </img>
+              alt="Next"
+            />
           </div>
         </motion.div>
       </div>

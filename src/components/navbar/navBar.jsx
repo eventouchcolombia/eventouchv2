@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 import "../../styles/navbar.css";
 import { sectionIds } from "./sectionIds";
 import { Link } from "react-router-dom";
@@ -9,6 +10,12 @@ import instagram from "../../utilities/images/instagram.png";
 import linkedin from "../../utilities/images/linkedin.png";
 
 const NavBar = ({ activeLink, onScrollToSection }) => {
+   const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("darkMode") === "enabled";
@@ -58,6 +65,14 @@ const NavBar = ({ activeLink, onScrollToSection }) => {
                 style={{ width: "22px", height: "22px" }}
               />
             </button>
+            <select
+              onChange={(e) => changeLanguage(e.target.value)}
+              value={i18n.language}
+              style={{ marginLeft: "1rem", padding: "4px", borderRadius: "4px" }}
+            >
+              <option value="es">ES</option>
+              <option value="en">EN</option>
+            </select>
           </div>
           </div>
 
@@ -81,7 +96,7 @@ const NavBar = ({ activeLink, onScrollToSection }) => {
                     setMenuOpen(false);
                   }}
                 >
-                  {sectionId}
+                  {t('navbar.' + sectionId)}
                 </Link>
               </li>
             ))}

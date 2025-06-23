@@ -11,11 +11,12 @@ import { Link } from "react-router-dom";
 import { AnimatedSection } from "../animations/animationSection";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 
 export const HomeNavBar = () => {
   const swiperRef = useRef(null);
-
+  const { t } = useTranslation();
   const { ref, inView } = useInView({
     threshold: 0.3, // Se activa cuando el 30% está visible
     triggerOnce: false, // ⚠️ Necesario para que se repita al entrar/salir
@@ -84,7 +85,7 @@ export const HomeNavBar = () => {
 
       {/* Contenedor del texto */}
       <motion.div
-        className="text-center md:text-left flex flex-col gap-10 md:pl-56"
+        className="text-center md:w-2/3 md:text-left flex flex-col gap-10 md:pl-85  md:pt-10 "
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -93,18 +94,13 @@ export const HomeNavBar = () => {
           className="text-5xl text-left md:text-6xl font-bold"
           variants={itemVariants}
         >
-          lleva tu marca al siguiente <br />
-          nivel con experiencias <br />
-          interactivas que cautivan a <br />
-          tu audiencia
+          {t('home.hero.title')}
         </motion.h1>
         <motion.p
           className="text-3xl text-left md:text-2xl mt-4"
           variants={itemVariants}
         >
-          <br />
-          En EvenTouch, transformamos la publicidad <br />
-          tradicional en experiencias memorables
+        {t('home.hero.subtitle')}
         </motion.p>
         <motion.button
           className="mt-6 text-3xl md:text-2xl text-white font-semibold w-[100%] md:w-56 h-20 md:h-16 rounded-full cursor-pointer bg-[#753E89]"
@@ -115,7 +111,7 @@ export const HomeNavBar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          ¡Quiero innovar!
+          {t('home.hero.cta')}
         </motion.button>
       </motion.div>
 

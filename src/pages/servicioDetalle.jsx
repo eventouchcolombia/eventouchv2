@@ -38,7 +38,7 @@ const servicios = {
       'Transporte y montaje',
     ],
   },
-  'speak-ia': {
+  speakIa: {
     titulo: 'Talk IA',
     imagen: '/talkIA.png' ,
     descripcion:
