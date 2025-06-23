@@ -77,7 +77,7 @@ export const NuestrosServicios = () => {
                     variants={itemVariants}
                     className={`tt group h-[450px] w-[270px] md:w-[200px] md:h-[310px] rounded-2xl p-10 text-white bg-gradient-to-br ${servicio.color} shadow-lg hover:brightness-110 hover:shadow-2xl transition-all duration-300 justify-end flex flex-col items-center gap-10 md:gap-2 pb-10 md:pb-4`}
                   >
-                    <h3 className="w-full text-5xl md:text-3xl font-semibold text-left pb-10">
+                    <h3 className="s w-full text-5xl md:text-3xl font-semibold text-left pb-10">
                      {t(`servicesList.${servicio.id}.nombre`)}
                     </h3>
                     <p className="text-3xl md:text-lg font-light text-left pr-8 md:pr-9">
