@@ -23,9 +23,9 @@ export const HomeNavBar = () => {
 const videos = [
   { src: "/nike.mov", poster: "/nike.png" },
   { src: "/alpina.mov", poster: "/alpina.png" },
+  { src: "/macdonals.mov", poster: "/macdonals.png" },
   { src: "/pacman.mov", poster: "/pacman.png" },
-  { src: "/macdonals.mov", poster: "/macdonals.png" },
-  { src: "/macdonals.mov", poster: "/macdonals.png" },
+  { src: "/oldparr.mov", poster: "/oldparr.png" },
   { src: "/macdonals.mov", poster: "/macdonals.png" },
 ];
 
