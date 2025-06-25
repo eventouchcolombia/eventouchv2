@@ -8,13 +8,14 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/mousewheel';
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 export const HomeNavBar = () => {
   const swiperRef = useRef(null);
   const videoRefs = useRef([]);
   const [activeIndex, setActiveIndex] = useState(1);
-  
-
+  const { t } = useTranslation();
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: false,
@@ -64,32 +65,22 @@ const videos = [
     >
       {/* Texto a la izquierda */}
       <motion.div
-        className="text-center md:text-left flex flex-col gap-5 md:pl-76 "
-        variants={{
-          hidden: { opacity: 0, x: -50 },
-          visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-              staggerChildren: 0.5,
-              duration: 0.8,
-              ease: "easeOut"
-            },
-          },
-        }}
+        className="text-center md:w-2/3 md:text-left flex flex-col gap-10 md:pl-85  md:pt-10 "
+        variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
       >
-        <motion.h1 className="text-5xl text-left md:text-6xl font-bold">
-          lleva tu marca al siguiente <br />
-          nivel con experiencias <br />
-          interactivas que cautivan a <br />
-          tu audiencia
+        <motion.h1
+          className="text-5xl text-left md:text-6xl font-bold"
+          variants={itemVariants}
+        >
+          {t('home.hero.title')}
         </motion.h1>
-        <motion.p className="text-3xl text-left md:text-2xl mt-4">
-          <br />
-          En EvenTouch, transformamos la publicidad <br />
-          tradicional en experiencias memorables
+        <motion.p
+          className="text-3xl text-left md:text-2xl mt-4"
+          variants={itemVariants}
+        >
+        {t('home.hero.subtitle')}
         </motion.p>
         <motion.button
           className="mt-6 text-3xl md:text-2xl text-white font-semibold w-[100%] md:w-56 h-20 md:h-16 rounded-full cursor-pointer bg-[#753E89]"
@@ -99,7 +90,7 @@ const videos = [
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          ¡Quiero innovar!
+          {t('home.hero.cta')}
         </motion.button>
       </motion.div>
 
