@@ -8,7 +8,6 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/mousewheel';
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 
 export const HomeNavBar = () => {
@@ -44,6 +43,12 @@ const videos = [
     });
   }, [activeIndex]);
 
+    const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  
   const location = useLocation();
 
   useEffect(() => {
@@ -64,9 +69,20 @@ const videos = [
       className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-20 md:gap-16 px-4 md:px-0 !pt-40 md:!pt-50 "
     >
       {/* Texto a la izquierda */}
-      <motion.div
-        className="text-center md:w-2/3 md:text-left flex flex-col gap-10 md:pl-85  md:pt-10 "
-        variants={containerVariants}
+ <motion.div
+        className="text-center md:text-left flex flex-col gap-5 md:pl-76 "
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+              staggerChildren: 0.5,
+              duration: 0.8,
+              ease: "easeOut"
+            },
+          },
+        }}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
       >
