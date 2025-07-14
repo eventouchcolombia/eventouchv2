@@ -6,6 +6,7 @@ const resources = {
     translation: {
       navbar: {
         'Home': 'Home',
+        'Sobre Nosotros': 'About Us',
         'Innovacion Interactiva': 'Interactive Innovation',
         'Nuestros Servicios': 'Our Services',
         'VR Oculus': 'VR Oculus',
@@ -118,6 +119,7 @@ const resources = {
     translation: {
       navbar: {
         'Home': 'Inicio',
+        'Sobre Nosotros': 'Sobre Nosotros',
         'Innovacion Interactiva': 'Innovación Interactiva',
         'Nuestros Servicios': 'Nuestros Servicios',
         'VR Oculus': 'VR Oculus',

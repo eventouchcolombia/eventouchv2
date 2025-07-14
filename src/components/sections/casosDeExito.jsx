@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-
+import { Navegacion } from "../navbar/navigationSections";
 // Hook para animar número desde 'start' hasta 'target'
 const useCounter = (target, start, duration, active) => {
   const [count, setCount] = useState(start);
@@ -60,7 +60,7 @@ const AnimatedNumber = ({ value, duration = 1000 }) => {
 };
 
 // Componente principal
-export const CasosDeExito = () => {
+export const CasosDeExito = ({goTo}) => {
   return (
     <section id="Casos-de-Exito" className="w-screen h-screen">
       <div className="flex flex-col md:flex-row w-full h-screen">
@@ -72,6 +72,9 @@ export const CasosDeExito = () => {
           <p className="md:text-2xl text-3xl text-left">
             Conoce cómo hemos ayudado a diversas marcas a transformar su publicidad y conectar de manera efectiva con su audiencia.
           </p>
+            <div className="pt-2">
+                  <Navegacion goTo={goTo} />
+            </div>
         </div>
 
         {/* Tarjetas con datos a la derecha */}

@@ -5,8 +5,9 @@ import playIcon from "../../utilities/images/play.png";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next'; // ✅ Importa hook de traducción
+import { Navegacion } from "../navbar/navigationSections";
 
-export const InnovacionInteractiva = () => {
+export const InnovacionInteractiva = ({goTo}) => {
   const { t } = useTranslation(); // ✅ Inicializa traducción
 
   const videoRef = useRef(null);
@@ -48,9 +49,10 @@ export const InnovacionInteractiva = () => {
 
   return (
     <section id="Innovacion-Interactiva" ref={ref} className="w-full h-screen">
+
       <div className="flex flex-col md:flex-row w-full h-screen p-6 lg:p-20">
         <motion.div
-          className="w-full h-auto md:w-2/3 md:h-screen flex flex-col items-center justify-center px-6 pt-50 md:pt-0 md:pl-70 md:pr-20 text-left gap-6 md:gap-10 md:pb-20"
+          className="w-full h-auto md:w-2/3 md:h-screen flex flex-col  justify-center px-6 pt-50 md:pt-0 md:pl-70 md:pr-20 text-left gap-6 md:gap-10 md:pb-20"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -61,6 +63,9 @@ export const InnovacionInteractiva = () => {
           <p className="md:text-2xl text-3xl">
             {t('innovation.description')}
           </p>
+          <div> 
+            <Navegacion goTo={goTo} />
+          </div>
         </motion.div>
 
         {/* Video con fondo gris y botón de Play */}
