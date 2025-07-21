@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import {  HomeNavBar } from "../components/sections/homeNavbar";
-import {  InnovacionInteractiva } from "../components/sections/InnovacionInteractiva";
+import { InnovacionInteractiva } from "../components/sections/innovacionInteractiva";
 import { NuestrosServicios} from "../components/sections/nuestrosServicios";
 import {  VrOculus } from "../components/sections/vrOculus";
 import { CasosDeExito } from "../components/sections/CasosDeExito";
