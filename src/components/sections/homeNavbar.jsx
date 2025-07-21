@@ -66,11 +66,11 @@ const videos = [
     <section
       id="Home"
       ref={ref}
-      className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-20 md:gap-16 px-4 md:px-0 !pt-40 md:!pt-50 "
+      className="flex flex-col md:flex-row items-center justify-center h-screen  gap-20 md:gap-16 px-4 md:px-0 !pt-65 md:!pt-50 "
     >
       {/* Texto a la izquierda */}
  <motion.div
-        className="text-center md:text-left flex flex-col gap-5 md:pl-76 "
+        className="text-center md:text-left flex flex-col gap-5 md:pl-76 p-10"
         variants={{
           hidden: { opacity: 0, x: -50 },
           visible: {

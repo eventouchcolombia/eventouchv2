@@ -13,19 +13,19 @@ export const SeccionesUnidas = () => {
   };
 
   return (
-    <section id="SeccionesUnidas" className=" w-full h-screen  overflow-hidden ">
+    <section id="Sobre-Nosotros" className=" w-full h-screen  overflow-hidden ">
       <div
         className="flex transition-transform duration-500 ease-in-out w-[300vw] "
         style={{ transform: `translateX(-${activeIndex * 100}vw)` }}
       >
         <div className="w-screen h-screen shrink-0">
-          <InnovacionInteractiva goTo={goTo} />
+          <InnovacionInteractiva goTo={goTo} activeSection={activeIndex} />
         </div>
         <div className="w-screen h-screen shrink-0">
-          <CasosDeExito goTo={goTo} />
+          <CasosDeExito goTo={goTo} activeSection={activeIndex} />
         </div>
         <div className="w-screen h-screen shrink-0">
-          <PorQueElegirnos goTo={goTo} />
+          <PorQueElegirnos goTo={goTo} activeSection={activeIndex} />
         </div>
       </div>
     </section>

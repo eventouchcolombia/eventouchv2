@@ -31,7 +31,7 @@ const imageVariants = {
   },
 };
 
-export const PorQueElegirnos = ({ goTo }) => {
+export const PorQueElegirnos = ({ goTo , activeSection}) => {
   const AnimatedImage = ({ direction, url }) => (
     <motion.div
       className="h-full w-full rounded-3xl bg-cover bg-center"
@@ -55,11 +55,11 @@ export const PorQueElegirnos = ({ goTo }) => {
           <h2 className="md:text-5xl text-5xl font-bold text-left">{t("choose.title")}</h2>
           <p className="md:text-2xl text-3xl text-left">{t("choose.description")}</p>
                 <div className="pt-6">
-        <Navegacion goTo={goTo} />
+        <Navegacion goTo={goTo} activeSection={activeSection}  />
       </div>
         </div>
 
-        <div className="md:w-1/2 w-full h-screen flex items-center justify-center">
+        <div className="md:w-1/2 w-full h-[400px] md:h-screen flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 w-6/7 h-7/8 md:w-full md:h-full gap-6 md:pt-60 md:pl-10 md:pr-35 md:pb-35">
             <div className="grid grid-cols-2 gap-6">
               <AnimatedImage direction="left" url={"/oldparrEvento.jpeg"} />

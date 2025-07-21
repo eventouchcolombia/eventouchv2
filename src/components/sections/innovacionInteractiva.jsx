@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next'; // ✅ Importa hook de traducción
 import { Navegacion } from "../navbar/navigationSections";
 
-export const InnovacionInteractiva = ({goTo}) => {
+export const InnovacionInteractiva = ({goTo, activeSection}) => {
   const { t } = useTranslation(); // ✅ Inicializa traducción
 
   const videoRef = useRef(null);
@@ -64,7 +64,7 @@ export const InnovacionInteractiva = ({goTo}) => {
             {t('innovation.description')}
           </p>
           <div> 
-            <Navegacion goTo={goTo} />
+            <Navegacion goTo={goTo} activeSection={activeSection}  />
           </div>
         </motion.div>
 

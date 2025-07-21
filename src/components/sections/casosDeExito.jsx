@@ -60,7 +60,7 @@ const AnimatedNumber = ({ value, duration = 1000 }) => {
 };
 
 // Componente principal
-export const CasosDeExito = ({goTo}) => {
+export const CasosDeExito = ({goTo, activeSection}) => {
   return (
     <section id="Casos-de-Exito" className="w-screen h-screen">
       <div className="flex flex-col md:flex-row w-full h-screen">
@@ -73,7 +73,7 @@ export const CasosDeExito = ({goTo}) => {
             Conoce cómo hemos ayudado a diversas marcas a transformar su publicidad y conectar de manera efectiva con su audiencia.
           </p>
             <div className="pt-2">
-                  <Navegacion goTo={goTo} />
+                  <Navegacion goTo={goTo} activeSection={activeSection}  />
             </div>
         </div>
 

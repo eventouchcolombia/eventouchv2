@@ -1,1 +1,1 @@
-export const sectionIds = [ "Home", "SeccionesUnidas", "Nuestros Servicios", "VR Oculus",  "Contactanos" ]
+export const sectionIds = [ "Home", "Sobre Nosotros", "Nuestros Servicios", "VR Oculus",  "Contactanos" ]
