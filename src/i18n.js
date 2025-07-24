@@ -1,3 +1,4 @@
+import { title } from 'framer-motion/client';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -12,7 +13,9 @@ const resources = {
         'VR Oculus': 'VR Oculus',
         'Casos de Exito': 'Success Stories',
         '¿Por Que Elegirnos?': 'Why Choose Us?',
+        'Totem': 'Totem',
         'Contactanos': 'Contact Us',
+        'Totem': 'Totem'
       },
       home: {
         hero: {
@@ -74,6 +77,11 @@ const resources = {
           close: 'Close'
         },
         location: 'Calle 123 #45-67; Bogotá, Colombia'
+      },
+      totem:{
+        title: 'Make Everyone Interact!',
+        description: 'Customize content, collect data, and captivate your guests. Ideal for activations, corporate events, and fairs.',
+        ctaCotiza: 'Get a Quote',
       },
       servicesList: {
         photobot: {
@@ -187,6 +195,11 @@ const resources = {
           close: 'Cerrar'
         },
         location: 'Calle 123 #45-67; Bogotá, Colombia'
+      },
+      totem:{
+        title: '¡Haz que todos interactuen!',
+        description: 'Personaliza el contenido, recopila datos y cautiva a tus invitados. Ideal para activaciones, eventos corporativos y ferias.',
+        ctaCotiza: '¡Cotiza con nosotros!',
       },
       servicesList: {
         photobot: {

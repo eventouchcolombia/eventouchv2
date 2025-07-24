@@ -9,7 +9,7 @@ import { CasosDeExito } from "../components/sections/CasosDeExito";
 import { PorQueElegirnos } from "../components/sections/porQueElegirnos";
 import { Contactanos } from "../components/sections/contactanos";
 import { SeccionesUnidas } from "../components/sections/seccionesUnidas";
-
+import { AlquilerTotem } from "../components/sections/alquilerTotem";
 export const Home = () => {
   const location = useLocation();
 
@@ -29,11 +29,9 @@ export const Home = () => {
     <>
       <HomeNavBar />
       <SeccionesUnidas />
-  
       <NuestrosServicios />
       <VrOculus />
-      
-      
+      <AlquilerTotem />  
       <Contactanos/>
     </>
   );

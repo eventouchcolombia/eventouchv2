@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next"; // ✅ Traducción
+import { motion } from "framer-motion";
 
 export const VrOculus = () => {
   const [showAlternateView, setShowAlternateView] = useState(false);
@@ -17,9 +18,16 @@ export const VrOculus = () => {
               {t("oculus.subtitle")}
             </p>
             <div className="flex flex-col items-center md:flex-row gap-6 ">
-              <button className="bg-[rgba(92,41,112,1)] text-white rounded-full px-6 py-4 text-2xl font-bold w-2/3 md:w-72">
+              <motion.button
+                className="mt-6 text-3xl md:text-2xl text-white font-semibold w-[100%] md:w-56 h-20 md:h-16 rounded-full cursor-pointer bg-[#753E89]"
+                onClick={() =>
+                  document.getElementById("Contactanos")?.scrollIntoView({ behavior: "smooth" })
+                }
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 {t("oculus.ctaExplore")}
-              </button>
+              </motion.button>
               <button
                 className="bg-white text-[rgba(92,41,112,1)] rounded-full border border-[rgba(92,41,112,1)] px-6 py-4 text-2xl font-bold w-2/3 md:w-56"
                 onClick={() => setShowAlternateView(true)}
@@ -46,9 +54,16 @@ export const VrOculus = () => {
             ))}
 
             <div className="flex gap-6 mt-6">
-              <button className="bg-[rgba(92,41,112,1)] text-white rounded-full px-6 py-4 text-2xl font-bold w-72">
+              <motion.button
+                className="mt-6 text-3xl md:text-2xl text-white font-semibold w-[100%] md:w-56 h-20 md:h-16 rounded-full cursor-pointer bg-[#753E89]"
+                onClick={() =>
+                  document.getElementById("Contactanos")?.scrollIntoView({ behavior: "smooth" })
+                }
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 {t("oculus.ctaExplore")}
-              </button>
+              </motion.button>
               <button
                 className="bg-white text-[rgba(92,41,112,1)] rounded-full border border-[rgba(92,41,112,1)] px-6 py-4 text-2xl font-bold w-56"
                 onClick={() => setShowAlternateView(false)}
