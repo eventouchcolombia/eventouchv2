@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InnovacionInteractiva } from "./InnovacionInteractiva";
+import { InnovacionInteractiva } from "./innovacionInteractiva";
 import { CasosDeExito } from "./CasosDeExito";
 import { PorQueElegirnos } from "./porQueElegirnos";
 
