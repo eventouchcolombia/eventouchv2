@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { InnovacionInteractiva } from "./innovacionInteractiva";
-import { CasosDeExito } from "./CasosDeExito";
+import { CasosDeExito } from "./casosDeExito";
 import { PorQueElegirnos } from "./porQueElegirnos";
 
 export const SeccionesUnidas = () => {
