@@ -60,6 +60,7 @@ export const AlquilerTotem = () => {
                 src="/alquilerTotem.png"
                 alt="Alquiler Totem"
                 className="max-w-full md:max-h-200 max-h-[300px] object-contain shake-on-hover"
+                
             />
         </div>
       </div>
